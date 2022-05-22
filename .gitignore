@@ -1,0 +1,62 @@
+*.DS_Store*
+.htaccess
+apple-touch-icon-precomposed.png
+apple-touch-icon.png
+favicon.ico
+index.php
+license.txt
+readme.html
+wp-admin
+wp-activate.php
+wp-blog-header.php
+wp-comments-post.php
+wp-config-sample.php
+wp-config.php
+advanced-cache.php
+wp-content/mysql.sql
+wp-content/object-cache.php
+wp-content/uploads
+wp-includes
+wp-cron.php
+wp-links-opml.php
+wp-load.php
+wp-login.php
+wp-mail.php
+wp-settings.php
+wp-signup.php
+wp-trackback.php
+xmlrpc.php
+
+*node_modules*
+
+wp-content/debug.log
+wp-content/wp-cache-config.php
+wp-content/cache/
+wp-content/logs/
+
+# Themes
+!wp-content/themes/
+wp-content/themes/twentynineteen
+wp-content/themes/twentyseventeen
+wp-content/themes/twentytwenty
+wp-content/themes/twentytwentyone
+wp-content/themes/fleishmanhillard/package-lock.json
+!wp-content/themes/fleishmanhillard/index.php
+!wp-content/themes/fleishmanhillard/template-parts/blocks/*/index.php
+
+# Plugins
+wp-content/plugins
+
+# MU plugins
+wp-content/mu-plugins/disable-ssl-verification.php
+
+# Custom
+wp-errors.log
+
+# Docker
+_wpeprivate
+docker-compose.yml
+wp-config-docker.php
+
+# IDE
+.idea
