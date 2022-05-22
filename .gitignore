@@ -60,3 +60,5 @@ wp-config-docker.php
 
 # IDE
 .idea
+
+/assets
