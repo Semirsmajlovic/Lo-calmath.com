@@ -1,0 +1,42 @@
+/* breadcrumbs styles start */
+#bbpress-forums {
+	
+	div.bbp-breadcrumb {
+		font-size: inherit;
+		line-height: 48px;
+		float: none;
+		
+		p {
+			margin: 0;
+			
+			> * {
+				
+				&:not(:last-child):after {
+					content: "";
+				}
+			}
+		}
+		
+		.bbp-breadcrumb-home {
+			color: $default-text-color;
+			
+			&:hover {
+				color: $aditional-blue-color;
+			}
+		}
+		
+		.bbp-breadcrumb-current {
+			color: $aditional-blue-color;
+		}
+	}
+}
+
+.eltdf-title-holder .eltdf-title-wrapper .eltdf-breadcrumbs {
+	
+	div.bbp-breadcrumb,
+	div.bbp-topic-tags {
+		font-size: 15px;
+	}
+}
+
+/* breadcrumbs styles end */

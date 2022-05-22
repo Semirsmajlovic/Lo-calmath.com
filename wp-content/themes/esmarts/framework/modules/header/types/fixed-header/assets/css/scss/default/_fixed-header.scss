@@ -1,0 +1,35 @@
+/* ==========================================================================
+   Fixed header style - begin
+   ========================================================================== */
+
+.eltdf-page-header {
+    
+    .eltdf-fixed-wrapper {
+        
+        &.fixed {
+            position: fixed;
+	        top: 0;
+	        left: 0;
+	        width: 100%;
+            -webkit-backface-visibility: hidden;
+            
+            .admin-bar & {
+                margin-top: 32px;
+            }
+	
+	        .eltdf-menu-area {
+		        background-color: #fff;
+	        }
+        }
+	
+	    .eltdf-fixed-on-scroll & {
+		
+		    .eltdf-menu-area {
+			    @include eltdfTransition(height .2s ease);
+		    }
+	    }
+    }
+}
+/* ==========================================================================
+   Fixed header style - end
+   ========================================================================== */

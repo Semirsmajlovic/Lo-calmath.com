@@ -1,0 +1,303 @@
+//layout mixins - start
+
+@mixin eltdfTableLayout() {
+    position: relative;
+    display: table;
+    table-layout: fixed;
+    height: 100%;
+    width: 100%;
+}
+
+@mixin eltdfTableCellLayout() {
+    position: relative;
+    display: table-cell;
+    height: 100%;
+    width: 100%;
+    vertical-align: middle;
+}
+
+@mixin eltdfRelativeHolderLayout() {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    vertical-align: middle;
+}
+
+@mixin eltdfAbsoluteHolderLayout() {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+@mixin eltdfTypographyLayout() {
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    font-style: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+    text-transform: inherit;
+}
+
+//layout mixins - end
+
+//transition mixins - start
+
+@mixin eltdfTransition($transition-param...) {
+    -webkit-transition: $transition-param;
+    -moz-transition: $transition-param;
+    transition: $transition-param;
+}
+
+@mixin eltdfTransitionTransform($transition-param...) {
+    -webkit-transition: -webkit-transform $transition-param;
+    -moz-transition: -moz-transform $transition-param;
+    transition: transform $transition-param;
+}
+
+@mixin eltdfTransform($transform-param...) {
+    -webkit-transform: $transform-param;
+    -moz-transform: $transform-param;
+    transform: $transform-param;
+}
+
+@mixin eltdfAnimation($animation-param...) {
+    -webkit-animation: $animation-param;
+    -moz-animation: $animation-param;
+    animation: $animation-param;
+}
+
+@mixin eltdfTransformOrigin($animation-param...) {
+    -webkit-transform-origin: $animation-param;
+    -moz-transform-origin: $animation-param;
+    transform-origin: $animation-param;
+}
+
+//transition mixins - end
+
+/* common mixins - start */
+
+@mixin eltdfBckImageStyle(){
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+@mixin eltdfImageOverlayHoverStyle($with-hover: true){
+    
+    @if ($with-hover) {
+        
+        &:hover {
+        
+            &:after {
+                opacity: 1;
+            }
+        }
+    
+        &:after {
+            @include eltdfAbsoluteHolderLayout();
+            content: '';
+            background-color: rgba($default-heading-color, .4);
+            opacity: 0;
+            @include eltdfTransition(opacity .2s ease-in-out);
+        }
+        
+    } @else {
+        @include eltdfAbsoluteHolderLayout();
+        content: '';
+        background-color: rgba($default-heading-color, .4);
+        opacity: 0;
+        @include eltdfTransition(opacity .2s ease-in-out);
+    }
+}
+
+@mixin eltdfButtonDefaultStyle($full-line-height: false) {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    width: auto;
+    outline: none;
+    font-family: $default-heading-font-m;
+    font-size: 12px;
+    @if ($full-line-height) {
+        line-height: 42px;
+    } @else {
+        line-height: 22px;
+    }
+    font-weight: 700;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    margin: 0;
+    @include eltdfTransition(color .15s ease-in-out, background-color .25s ease, border-color .2s ease-in-out);
+}
+
+@mixin eltdfButtonTransparentColor() {
+    color: $default-text-color;
+    background-color: transparent;
+}
+
+@mixin eltdfButtonSolidColor() {
+    color: #fff;
+    background-color: $first-main-color;
+    border: 2px solid transparent;
+    border-radius: 40px;
+}
+
+@mixin eltdfButtonSolidLightColor() {
+    line-height: 26px;
+    color: $first-main-color;
+    background-color: #fff;
+    border: 0;
+    border-radius: 40px;
+}
+
+@mixin eltdfButtonSolidHoverColor() {
+    color: #fff;
+    background-color: $adittional-green-color;
+}
+
+@mixin eltdfButtonSolidLightHoverColor() {
+    color: $first-main-color;
+    background-color: rgba(255,255,255,.8);
+}
+
+@mixin eltdfButtonOutlineColor() {
+    color: $first-main-color;
+    background-color: transparent;
+    border: 2px solid $first-main-color;
+	border-radius: 40px;
+}
+
+@mixin eltdfButtonOutlineHoverColor() {
+    color: #fff;
+    background-color: $first-main-color;
+    border-color: $first-main-color;
+}
+
+@mixin eltdfButtonSmallParams() {
+    padding: 10px 36px;
+}
+
+@mixin eltdfButtonMediumParams($only_side_padding: false) {
+    @if ($only_side_padding) {
+        padding: 0 54px;
+    } @else {
+        padding: 10px 54px;
+    }
+}
+
+@mixin eltdfButtonLargeParams() {
+    padding: 15px 64px;
+}
+
+@mixin eltdfButtonHugeParams() {
+    display: block;
+    text-align: center;
+    padding: 13px 26px;
+}
+
+@mixin eltdfPlaceholder {
+    &::-webkit-input-placeholder {
+        @content
+    }
+    &:-moz-placeholder {
+        @content;
+        opacity: 1;
+    }
+    &::-moz-placeholder {
+        @content;
+        opacity: 1;
+    }
+    &:-ms-input-placeholder {
+        @content
+    }
+}
+
+/* common mixins - end */
+
+//media query mixins - start
+
+@mixin laptop-landscape-large {
+    @media only screen and (max-width: map-get($breakpoints, laptop-landscape-large)) {
+        @content;
+    }
+}
+
+@mixin laptop-landscape-medium {
+    @media only screen and (max-width: map-get($breakpoints, laptop-landscape-medium)) {
+        @content;
+    }
+}
+
+@mixin laptop-landscape {
+    @media only screen and (max-width: map-get($breakpoints, laptop-landscape)) {
+        @content;
+    }
+}
+
+@mixin ipad-landscape {
+    @media only screen and (max-width: map-get($breakpoints, ipad-landscape)) {
+        @content;
+    }
+}
+
+@mixin ipad-portrait {
+    @media only screen and (max-width: map-get($breakpoints, ipad-portrait)) {
+        @content;
+    }
+}
+
+@mixin phone-landscape {
+    @media only screen and (max-width: map-get($breakpoints, phone-landscape)) {
+        @content;
+    }
+}
+
+@mixin phone-portrait {
+    @media only screen and (max-width: map-get($breakpoints, phone-portrait)) {
+        @content;
+    }
+}
+
+@mixin smaller-phone-portrait {
+    @media only screen and (max-width: map-get($breakpoints, smaller-phone-portrait)) {
+        @content;
+    }
+}
+
+//media query mixins - end
+
+//animation mixin - start
+
+@mixin keyframes($name) {
+    @-webkit-keyframes #{$name} {
+        @content;
+    }
+
+    @keyframes #{$name} {
+        @content;
+    }
+}
+
+@mixin animation($name, $duration, $repeat, $timing, $delay) {
+    -webkit-animation-name: $name;
+    -webkit-animation-duration: $duration;
+    -webkit-animation-iteration-count: $repeat;
+    -webkit-animation-timing-function: $timing;
+    -webkit-animation-delay: $delay;
+    -webkit-animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+
+    animation-name: $name;
+    animation-duration: $duration;
+    animation-iteration-count: $repeat;
+    animation-timing-function: $timing;
+    animation-delay: $delay;
+    animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+}
+
+//animation mixin - end

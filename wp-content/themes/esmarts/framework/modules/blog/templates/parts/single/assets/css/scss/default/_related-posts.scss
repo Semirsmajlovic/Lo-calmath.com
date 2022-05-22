@@ -1,0 +1,108 @@
+/* Related posts styles - begin
+	====================================================================== */
+
+.eltdf-related-posts-holder {
+    @include eltdfRelativeHolderLayout();
+    padding: 0;
+    margin: 50px 0 0;
+    box-sizing: border-box;
+
+    .eltdf-related-posts-title {
+        margin: 0 0 40px;
+    }
+
+    .eltdf-related-posts-inner {
+        margin: 0 -15px;
+    }
+
+    .eltdf-related-post {
+        position: relative;
+        display: inline-block;
+        float: left;
+        width: 25%;
+        margin: 0 0 30px;
+        padding: 0 15px;
+        box-sizing: border-box;
+    
+        .eltdf-content-has-sidebar & {
+            widtH: 33.33333333333333%;
+        }
+    
+        .touch & {
+            cursor: pointer;
+        }
+    
+        &:hover {
+        
+            .eltdf-related-post-image a:after {
+                opacity: 1;
+            }
+        }
+    
+        .eltdf-related-post-image {
+            @include eltdfRelativeHolderLayout();
+            overflow: hidden;
+        
+            a {
+                position: relative;
+                display: block;
+                @include eltdfTransform(scale(1));
+                @include eltdfTransitionTransform(.3s ease);
+            
+                &:after {
+                    position: absolute;
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    content: '';
+                    background-color: rgba(0,0,0,.1);
+                    opacity: 0;
+                    @include eltdfTransition(opacity .2s ease-in-out);
+                }
+
+                &:hover {
+
+                    @include eltdfTransform(scale(1.05));
+                    &:after {
+                        opacity: 1;
+                    }
+                }
+            }
+        
+            img {
+                display: block;
+            }
+        }
+    
+        .eltdf-post-title {
+            margin: 19px 0 0;
+        }
+    
+        .eltdf-post-info {
+            @include eltdfRelativeHolderLayout();
+            margin: 1px 0 0;
+
+            > div {
+                position: relative;
+                display: inline-block;
+                vertical-align: top;
+                font-family: $default-heading-font-m;
+                font-size: 14px;
+                color: #b9b9b9;
+
+                a {
+                    color: inherit;
+                    
+                    &:hover {
+                        color: $default-heading-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Related posts styles - end
+	====================================================================== */

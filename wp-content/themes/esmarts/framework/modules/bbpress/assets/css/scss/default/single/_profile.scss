@@ -1,0 +1,186 @@
+/* start of profile */
+#bbpress-forums {
+	
+	#bbp-user-wrapper {
+		padding: 39px 0;
+		font-weight: 500;
+		
+		ul.bbp-topics {
+			clear: both;
+		}
+		
+		ul.bbp-replies {
+			clear: both;
+		}
+		
+		.bbp-user-forum-role,
+		.bbp-user-topic-count,
+		.bbp-user-reply-count {
+			text-transform: none;
+			font-size: 14px;
+			color: $default-text-color;
+			font-weight: 600;
+		}
+		
+		h2.entry-title {
+			font-size: 16px;
+			font-weight: 600;
+			padding-bottom: 0px;
+			color: $table_headings;
+		}
+		
+		.bbp-user-description {
+			font-size: 14px;
+			margin-bottom: 12px;
+		}
+	}
+	
+	#bbp-single-user-details {
+		width: 160px;
+		
+		#bbp-user-navigation {
+			
+			li {
+				
+				&:last-child {
+					
+					a {
+						border-bottom: none;
+					}
+				}
+				
+				&.current {
+					
+					a {
+						background-color: transparent;
+						opacity: 1;
+						color: $first-main-color;
+					}
+				}
+				
+				a {
+					
+					font-size: 14px;
+					border-bottom: 1px solid $default-border-color;
+					
+					&:hover {
+						color: $first-main-color;
+					}
+				}
+			}
+		}
+		
+		#bbp-user-avatar {
+			width: auto;
+			
+			img.avatar {
+				margin-bottom: 6px;
+				border: 1px solid transparent;
+				height: auto;
+				width: 127px;
+			}
+		}
+	}
+	
+	#bbp-user-body {
+		margin-left: 180px;
+		
+		.bbp-topic-title {
+			
+			.bbp-topic-permalink {
+				font-size: 14px;
+				color: #303030;
+				font-weight: 600;
+			}
+		}
+		
+		.bbp-topic-meta {
+			font-size: 14px;
+		}
+		
+		.bbp-topic-started-by {
+			
+			.bbp-author-name {
+				color: $first-main-color;
+			}
+		}
+		
+		.bbp-topic-freshness-author {
+			
+			.bbp-author-avatar {
+				display: none;
+			}
+			
+			.bbp-author-name {
+				color: $first-main-color;
+			}
+		}
+		
+		div.indicator-hint {
+			padding: 12px 18px;
+			color: #808080;
+			border-radius: 0;
+			
+			p {
+				font-size: 14px;
+			}
+			
+			img.avatar {
+				border: none;
+				vertical-align: middle;
+				margin-bottom: 0;
+				margin-left: 5px;
+				margin-right: 5px;
+			}
+		}
+	}
+	
+	#bbp-your-profile fieldset {
+		padding: 32px 0 12px;
+		
+		textarea,
+		input {
+			background-color: #ebebeb;
+			color: $input_color;
+			border: 1px solid #ebebeb;
+			
+			&:focus {
+				border-color: $default-heading-color;
+			}
+		}
+		
+		.description {
+			margin: 16px 0 0;
+			padding: 5px 8px;
+			font-style: normal;
+			background: none;
+			border: 0;
+			width: auto;
+		}
+		
+		> div {
+			
+			label[for] {
+				width: 26%;
+				line-height: 22px;
+				text-align: inherit;
+			}
+			
+			label[for="display_name"] {
+				padding-bottom: 11px;
+			}
+			
+			input {
+				width: 72%;
+				padding: 5px 14px;
+				line-height: 22px;
+			}
+		}
+		
+		div {
+			margin-bottom: 20px;
+		}
+	}
+}
+
+/* end of profile */

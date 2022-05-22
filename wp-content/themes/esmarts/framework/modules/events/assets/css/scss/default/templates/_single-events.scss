@@ -1,0 +1,271 @@
+.eltdf-tribe-events-single {
+	
+	.eltdf-events-single-main-info {
+		@include eltdfRelativeHolderLayout();
+		min-height: 88px;
+		margin: 48px 0 44px;
+	}
+	
+	.eltdf-events-single-date-holder {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 75px;
+		height: 88px;
+		text-align: center;
+		background-color: #fff;
+		border-radius: 6px;
+		box-shadow: $box-shadow-variable;
+		box-sizing: border-box;
+		
+		.eltdf-events-single-date-inner {
+			position: relative;
+			top: 50%;
+			@include eltdfTransform(translateY(-50%));
+		}
+		
+		.eltdf-events-single-date-day {
+			display: block;
+			font-family: $default-heading-font-m;
+			font-size: 32px;
+			line-height: 1;
+			font-weight: 700;
+			color: $default-heading-color;
+		}
+		
+		.eltdf-events-single-date-month {
+			display: block;
+			margin-top: 7px;
+			font-size: 18px;
+			line-height: 1;
+			color: $default-heading-color;
+		}
+	}
+	
+	.eltdf-events-single-title-holder {
+		position: relative;
+		padding: 0 70px 0 100px;
+		
+		h3.eltdf-events-single-title {
+			margin: 0;
+		}
+		
+		.eltdf-events-single-date {
+			margin: 9px 0 0;
+			font-family: $default-heading-font-m;
+			font-size: 14px;
+			
+			> span {
+				position: relative;
+				display: inline-block;
+				vertical-align: top;
+			}
+		}
+		
+		span.eltdf-events-single-info-icon {
+			position: relative;
+			top: 1px;
+			margin-right: 7px;
+			font-size: 15px;
+			
+			* {
+				display: block;
+				line-height: inherit;
+			}
+		}
+		
+		.eltdf-events-single-cost {
+			position: absolute;
+			top: 0;
+			right: 0;
+			padding: 5px 18px;
+			font-family: $default-heading-font-m;
+			font-size: 12px;
+			line-height: 17px;
+			text-transform: uppercase;
+			color: #fff;
+			background-color: $aditional-text-color;
+			border-radius: 4px;
+			box-sizing: border-box;
+			
+			&.eltdf-free {
+				background-color: $first-main-color;
+			}
+		}
+	}
+	
+	.eltdf-events-single-main-content {
+		
+		.tribe-events-cal-links {
+			margin-top: 15px;
+			margin-bottom: 0;
+			
+			.tribe-events-button {
+				position: relative;
+				overflow: hidden;
+				margin-right: 20px !important;
+				padding: 17px 40px !important;
+				font-family: $default-heading-font-m;
+				font-size: 14px;
+				line-height: 22px;
+				letter-spacing: .05em;
+				font-weight: 700;
+				text-transform: uppercase;
+				color: #fff !important;
+				background-color: $first-main-color !important;
+				border: 0 !important;
+				border-radius: 30px !important;
+				box-sizing: border-box;
+				z-index: 2;
+				@include eltdfTransition(all .2s);
+
+				&:after {
+					position: absolute;
+					display: block;
+					bottom: 0;
+					left: 0;
+					content: " ";
+					width: 100%;
+					height: 0;
+					background-color: $adittional-green-color;
+					border-radius: inherit;
+					z-index: -1;
+					@include eltdfTransformOrigin(0 100%);
+					@include eltdfTransition(height .3s ease);
+				}
+
+				&:hover {
+					&:after {
+						height: 100%;
+					}
+
+					color: #fff !important;
+					background-color: $first-main-color !important;
+				}
+			}
+		}
+		
+		.tribe-events-event-image {
+			margin-bottom: 30px;
+		}
+		
+		.tribe-events-venue-map {
+			width: 100%;
+			float: none;
+			margin: 0;
+			border: none;
+			padding: 0;
+			border-radius: 0;
+			
+			> div {
+				height: 0 !important;
+				padding-bottom: 61%;
+			}
+			
+			@include ipad-landscape {
+				margin-bottom: 30px;
+			}
+		}
+	}
+	
+	.eltdf-events-single-meta {
+		margin-top: 50px;
+		
+		h3 {
+			margin-bottom: 29px;
+		}
+		
+		@media only screen and (min-width: $ipad-landscape-plus-pixel) and (max-width: $laptop-landscape-medium) {
+			
+			.eltdf-grid-col-4 {
+				width: 50%;
+			}
+		}
+		
+		.eltdf-events-single-meta-item {
+			font-family: $default-heading-font-m;
+			font-size: 14px;
+			line-height: 22px;
+			margin-bottom: 19px;
+			
+			> * {
+				display: inline-block;
+				vertical-align: top;
+			}
+			
+			span.eltdf-events-single-meta-icon {
+				position: relative;
+				top: 1px;
+				margin-right: 5px;
+				font-size: 15px;
+				
+				* {
+					display: block;
+					line-height: inherit;
+				}
+			}
+			
+			a {
+				color: $aditional-blue-color;
+				
+				&:hover {
+					color: $default-heading-color;
+				}
+			}
+		}
+		
+		.eltdf-events-single-navigation-holder {
+			margin: 67px 0 81px;
+			
+			.eltdf-events-nav-image {
+				
+				img {
+					display: block;
+					width: 99px;
+				}
+			}
+			
+			.eltdf-events-single-prev-event,
+			.eltdf-events-single-next-event {
+				display: table;
+				
+				.eltdf-events-nav-image,
+				.eltdf-events-nav-text {
+					display: table-cell;
+					vertical-align: middle;
+				}
+				
+				.eltdf-events-nav-text {
+					padding: 0 25px;
+					
+					.eltdf-events-nav-label {
+						display: block;
+						font-family: $default-heading-font-m;
+						font-size: 14px;
+						line-height: 22px;
+						color: $default-heading-color;
+					}
+					
+					a {
+						color: $default-text-color;
+						font-size: 18px;
+						line-height: 23px;
+						
+						&:hover {
+							color: $default-heading-color;
+						}
+					}
+				}
+			}
+			
+			.eltdf-events-single-prev-event {
+				float: left;
+			}
+			
+			.eltdf-events-single-next-event {
+				float: right;
+				text-align: right;
+			}
+		}
+	}
+}

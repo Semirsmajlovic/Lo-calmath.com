@@ -1,0 +1,55 @@
+/* ==========================================================================
+   Blog List - Masonry style - begin
+   ========================================================================== */
+
+.eltdf-blog-holder {
+	
+    &.eltdf-blog-masonry {
+
+        article {
+
+            &.eltdf-post-has-media {
+                
+                .eltdf-post-heading {
+                    margin-bottom: 18px;
+                }
+            }
+	        
+	        .eltdf-post-info-top {
+		        margin-bottom: 0;
+	        }
+	        
+	        .eltdf-post-content {
+		        margin-bottom: 25px;
+	        }
+    
+            .eltdf-post-excerpt-holder {
+                margin: 14px 0 0;
+            }
+	
+	        .eltdf-post-info-bottom {
+		        padding-top: 16px;
+		        margin-top: 26px;
+	        }
+	
+	        &.format-quote {
+		
+		        .eltdf-post-text {
+			        padding: 45px 40px 44px;
+		        }
+		
+		        .eltdf-quote-mark {
+			        top: -57px;
+			        right: -50px;
+		        }
+		
+		        .eltdf-quote-mark-icon {
+			        font-size: 132px;
+		        }
+	        }
+        }
+    }
+}
+/* ==========================================================================
+   Blog List - Masonry style - end
+   ========================================================================== */

@@ -1,0 +1,67 @@
+/* ==========================================================================
+   WooCommerce Message styles - begin
+   ========================================================================== */
+.eltdf-woocommerce-page {
+
+    .woocommerce-message,
+    .woocommerce-info,
+    .woocommerce-error {
+        position: relative;
+        display: block;
+        padding: 15px 0;
+        margin: 0 0 40px;
+        line-height: 1em;
+        list-style: none;
+        background-color: transparent;
+        border-bottom: 1px solid $default-border-color;
+
+        a {
+            float: right;
+        }
+    }
+
+    .woocommerce-NoticeGroup-checkout {
+        .woocommerce-error {
+            line-height: 2em;
+        }
+    }
+
+    .eltdf-content{
+
+        .woocommerce-message {
+
+            a.button:not(.added_to_cart):not(.checkout-button) {
+                padding: 0 !important;
+                background-color: transparent !important;
+                color: $first-main-color !important;
+                font-size: 13px !important;
+                top: -5px !important;
+                @include eltdfTransform(translate3d(0,0,0));
+                @include eltdfTransition(color .15s ease-in-out,background-color .25s ease,border-color .2s ease-in-out, transform .3s ease);
+
+                &:after {
+                    background-color: transparent !important;
+                }
+
+                &:hover {
+
+                    @include eltdfTransform(translate3d(0,-5px,0));
+                }
+            }
+        }
+    }
+
+    .woocommerce-info {
+
+        .showcoupon {
+            color: $default-text-color;
+
+            &:hover {
+                color: $default-heading-color;
+            }
+        }
+    }
+}
+/* ==========================================================================
+   WooCommerce Message styles - end
+   ========================================================================== */

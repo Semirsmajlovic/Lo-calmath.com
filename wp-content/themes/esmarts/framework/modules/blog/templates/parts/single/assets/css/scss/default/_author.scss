@@ -1,0 +1,144 @@
+/* Single author box styles - begin
+	====================================================================== */
+
+.eltdf-author-description {
+    @include eltdfRelativeHolderLayout();
+    padding: 0;
+    margin: 40px 0 0;
+    background-color: #fff;
+	border-radius: 6px;
+	box-shadow: $box-shadow-variable;
+    box-sizing: border-box;
+    
+    .eltdf-author-description-inner {
+        padding: 27px 0 45px;
+        min-height: 138px; // static height of author image -- eltdf-author-description-image
+        clear: both;
+    }
+    
+    .eltdf-author-description-content {
+        position: relative;
+        padding: 0 32px;
+    }
+    
+    .eltdf-author-description-image {
+        float: left;
+        width: 138px;
+        
+        img {
+            display: block;
+            border-radius: 5em;
+        }
+    }
+    
+    .eltdf-author-description-text-holder {
+        position: relative;
+        padding-left: 164px;
+        
+        .eltdf-author-name {
+            margin: 4px 0 0;
+        }
+        
+        .eltdf-author-position {
+	        margin: 0;
+	        font-family: $default-heading-font-m;
+	        font-size: 14px;
+        }
+        
+        .eltdf-author-email {
+            margin: 0;
+        }
+        
+        .eltdf-author-text {
+            @include eltdfRelativeHolderLayout();
+            margin: 14px 0 0;
+            
+            > p {
+                margin: 0;
+            }
+        }
+        
+        .eltdf-author-social-icons {
+            @include eltdfRelativeHolderLayout();
+	        margin: 29px 0 0;
+	        
+            a {
+                position: relative;
+                display: inline-block;
+                vertical-align: top;
+                margin-right: 8px;
+                width: 26px;
+                height: 26px;
+                line-height: 26px;
+                text-align: center;
+	            @include eltdfTransition(opacity .2s ease-out);
+	            
+                &:hover {
+                    opacity: .85;
+                }
+                
+                span,
+                i {
+                    display: block;
+                    color: #fff;
+                    font-size: 11px;
+                    line-height: inherit;
+	                border-radius: 50%;
+                }
+    
+                i {
+                    font-size: 13px;
+                }
+            }
+            
+            .eltdf-author-social-twitter {
+                background-color: #00aced;
+            }
+            
+            .eltdf-author-social-instagram {
+                background-color: #e12f67;
+            }
+            
+            .eltdf-author-social-facebook {
+                background-color: #3b5998;
+            }
+            
+            .eltdf-author-social-pinterest {
+                background-color: #cb2027;
+            }
+            
+            .eltdf-author-social-tumblr {
+                background-color: #32506d;
+            }
+            
+            .eltdf-author-social-googleplus {
+                background-color: #dd4b39;
+            }
+            
+            .eltdf-author-social-linkedin {
+                background-color: #007bb5;
+            }
+        }
+    }
+    
+    @include ipad-portrait {
+	
+	    .eltdf-author-description-inner {
+		    min-height: inherit;
+	    }
+        
+        .eltdf-author-description-image {
+            display: block;
+            width: 100%;
+	        float: none;
+            margin-bottom: 30px;
+        }
+        
+        .eltdf-author-description-text-holder {
+            display: block;
+            padding: 0;
+        }
+    }
+}
+/* Single author box styles - end
+	====================================================================== */

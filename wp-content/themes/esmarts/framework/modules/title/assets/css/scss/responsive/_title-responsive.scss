@@ -1,0 +1,43 @@
+/* ==========================================================================
+   Title responsive style - begin
+   ========================================================================== */
+
+@include laptop-landscape-medium {
+    
+    .eltdf-title-holder {
+        
+        &.eltdf-title-full-width {
+            
+            .eltdf-grid {
+                padding: 0 40px;
+            }
+        }
+    }
+}
+
+@include ipad-landscape {
+    
+    .eltdf-title-holder {
+        
+        &.eltdf-has-bg-image:not(.eltdf-disable-responsive) {
+            height: auto !important; // because of inline style
+            padding: 0 !important; // because of inline style
+	        background-image: none !important; // because of inline style
+    
+            .eltdf-title-image {
+                display: block;
+            }
+    
+            .eltdf-title-wrapper {
+                position: absolute;
+                top: 50%;
+                left: 0;
+	            height: 100% !important;
+                @include eltdfTransform(translateY(-50%));
+            }
+        }
+    }
+}
+/* ==========================================================================
+   Title responsive style - end
+   ========================================================================== */

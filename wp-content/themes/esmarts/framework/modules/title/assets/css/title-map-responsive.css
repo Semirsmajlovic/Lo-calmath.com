@@ -1,0 +1,54 @@
+/* ==========================================================================
+   Title responsive styles - begin
+   ========================================================================== */
+/* common mixins - start */
+/* common mixins - end */
+/* ==========================================================================
+   Title responsive style - begin
+   ========================================================================== */
+@media only screen and (max-width: 1280px) {
+  .eltdf-title-holder.eltdf-title-full-width .eltdf-grid {
+    padding: 0 40px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .eltdf-title-holder.eltdf-has-bg-image:not(.eltdf-disable-responsive) {
+    height: auto !important;
+    padding: 0 !important;
+    background-image: none !important;
+  }
+  .eltdf-title-holder.eltdf-has-bg-image:not(.eltdf-disable-responsive) .eltdf-title-image {
+    display: block;
+  }
+  .eltdf-title-holder.eltdf-has-bg-image:not(.eltdf-disable-responsive) .eltdf-title-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 100% !important;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+}
+
+/* ==========================================================================
+   Title responsive style - end
+   ========================================================================== */
+/* ==========================================================================
+   Centered Title type responsive style - begin
+   ========================================================================== */
+@media only screen and (max-width: 1024px) {
+  .eltdf-title-holder.eltdf-centered-type .eltdf-page-subtitle {
+    padding: 0 !important;
+  }
+}
+
+/* ==========================================================================
+   Centered Title type responsive style - end
+   ========================================================================== */
+/* ==========================================================================
+   Title responsive styles - end
+   ========================================================================== */
+
+/*# sourceMappingURL=../css/title-map-responsive.css.map */

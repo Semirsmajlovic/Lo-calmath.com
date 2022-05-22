@@ -1,0 +1,568 @@
+/*==========================================================================
+# Fullscreen menu style - begin
+========================================================================== */
+
+/* Fullscreen general style - begin
+========================================================================== */
+
+.eltdf-dark-header .eltdf-page-header > div:not(.eltdf-sticky-header):not(.fixed) .eltdf-fullscreen-menu-opener {
+    color: $header-dark-color;
+    
+    &:hover,
+    &.eltdf-fm-opened {
+        color: $header-dark-color;
+    }
+}
+
+.eltdf-light-header .eltdf-page-header > div:not(.eltdf-sticky-header):not(.fixed) .eltdf-fullscreen-menu-opener {
+    color: $header-light-color;
+    
+    &:hover,
+    &.eltdf-fm-opened {
+        color: $header-light-color;
+    }
+}
+
+.eltdf-fullscreen-menu-opener {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    top: -5px;
+    
+    .eltdf-fm-lines {
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        width: 30px;
+        height: 20px;
+        
+        .eltdf-fm-line {
+            position: absolute;
+            left: 0;
+            height: 4px;
+            width: 100%;
+            background-color: currentColor;
+            border-radius: 12px;
+            @include eltdfTransitionTransform(.3s ease, top .2s ease-out, background-color .2s ease-out);
+            
+            &.eltdf-line-1 {
+                top: 0;
+                outline: transparent solid 1px;
+            }
+            
+            &.eltdf-line-2 {
+                top: calc(50% - 2px);
+                outline: transparent solid 1px;
+            }
+            
+            &.eltdf-line-3 {
+                top: calc(100% - 4px);
+                outline: transparent solid 1px;
+            }
+        }
+    }
+    
+    &:hover {
+        
+        .eltdf-fm-lines {
+            
+            .eltdf-fm-line {
+                
+                &.eltdf-line-1,
+                &.eltdf-line-3 {
+                    top: calc(50% - 2px);
+                }
+                
+                &.eltdf-line-2 {
+                    @include eltdfTransform(rotate(90deg));
+                }
+            }
+        }
+    }
+    
+    &.eltdf-fm-opened {
+        color: #fff;
+        
+        .eltdf-fm-lines {
+            
+            .eltdf-fm-line {
+                
+                &.eltdf-line-1 {
+                    display: none;
+                }
+                
+                &.eltdf-line-2 {
+                    top: 50%;
+                    @include eltdfTransform(rotate(45deg));
+                }
+                
+                &.eltdf-line-3 {
+                    top: 50%;
+                    @include eltdfTransform(rotate(-45deg));
+                }
+            }
+        }
+    }
+}
+
+.eltdf-fullscreen-menu-opened {
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    overflow-y: hidden;
+
+    &.admin-bar {
+        top: 32px;
+        height: calc(100% - 32px);
+    }
+
+    .eltdf-page-header,
+    .eltdf-top-bar {
+        visibility: hidden;
+    }
+
+    .eltdf-fullscreen-menu-opener,
+    .eltdf-logo-wrapper {
+        visibility: visible;
+    }
+    
+    .eltdf-logo-wrapper {
+        
+        a {
+            
+            img {
+                opacity: 0;
+                
+                &.eltdf-light-logo {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    .eltdf-fullscreen-menu-holder-outer {
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+}
+
+.eltdf-fullscreen-menu-holder-outer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden !important;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 105; /* this has to be between header z-index and content z-index */
+}
+
+.eltdf-fullscreen-menu-holder {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($default-heading-color, 0.95);
+    display: table;
+    background-repeat: repeat;
+    background-position: 0 0;
+}
+
+.eltdf-fullscreen-menu-holder-inner {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 100px 0;
+}
+
+.touch {
+
+    .eltdf-fullscreen-menu-holder-outer {
+        display: none;
+    }
+
+    .eltdf-fullscreen-menu-opened .eltdf-fullscreen-menu-holder-outer {
+        display: block;
+    }
+}
+
+nav.eltdf-fullscreen-menu {
+    position: relative;
+    top: 0;
+    margin: 0 auto;
+    text-align: left;
+
+    ul {
+        position: relative;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+
+            a {
+                position: relative;
+                display: block;
+                margin: 5px 0;
+                padding: 6px 0;
+                font-family: $default-heading-font-m;
+	            font-size: 22px;
+	            line-height: 1.3em;
+                font-weight: 700;
+                text-transform: uppercase;
+                color: #fff;
+                background-color: transparent;
+                @include eltdfTransform(translate3d(0,0,0));
+                @include eltdfTransitionTransform(.3s ease, color .2s ease-out);
+                
+                &:hover {
+                    color: $first-main-color;
+                    @include eltdfTransform(translate3d(0,-3px,0));
+                }
+                
+                span {
+                    position: relative;
+                    display: inline-block;
+                    vertical-align: top;
+                }
+
+                .eltdf-fullscreen-menu-arrow {
+                    display: none;
+                }
+            }
+
+            ul {
+                padding: 17px 0;
+
+                &.sub_menu {
+                    display: none;
+                }
+
+                li {
+
+                    &.current-menu-ancestor > a,
+                    &.current-menu-item > a {
+                        color: $first-main-color;
+                    }
+
+                    ul {
+
+                        li {
+
+                            a {
+                                font-size: 18px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    > ul {
+        display: block;
+
+        > li {
+
+            > a {
+                padding: 16px 0;
+                font-size: 45px;
+                
+                @include laptop-landscape-large {
+                    font-size: 40px;
+                }
+                
+                @include laptop-landscape-medium {
+                    font-size: 32px;
+                }
+                
+                @include phone-landscape {
+                    padding: 8px 0;
+                    font-size: 26px;
+                }
+            }
+
+            &.eltdf-active-item > a {
+                color: $first-main-color;
+            }
+        }
+    }
+}
+
+.eltdf-fullscreen-below-menu-widget-holder {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.eltdf-fullscreen-above-menu-widget-holder {
+    text-align: center;
+}
+
+/* Fullscreen general style - end
+========================================================================== */
+
+/* Fullscreen fade animations general - begin
+========================================================================== */
+
+@-webkit-keyframes fade_out {
+    0% {
+        opacity: 1;
+        visibility: visible
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden
+    }
+}
+
+@-moz-keyframes fade_out {
+    0% {
+        opacity: 1;
+        visibility: visible
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden
+    }
+}
+
+@keyframes fade_out {
+    0% {
+        opacity: 1;
+        visibility: visible
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden
+    }
+}
+
+@-webkit-keyframes fade_in {
+    0% {
+        opacity: 0;
+        visibility: hidden
+    }
+    100% {
+        opacity: 1;
+        visibility: visible
+    }
+}
+
+@-moz-keyframes fade_in {
+    0% {
+        opacity: 0;
+        visibility: hidden
+    }
+    100% {
+        opacity: 1;
+        visibility: visible
+    }
+}
+
+@keyframes fade_in {
+    0% {
+        opacity: 0;
+        visibility: hidden
+    }
+    100% {
+        opacity: 1;
+        visibility: visible
+    }
+}
+
+.eltdf-fade-push-text-right .eltdf-fullscreen-menu-holder-outer,
+.eltdf-fade-push-text-top .eltdf-fullscreen-menu-holder-outer,
+.eltdf-fade-text-scaledown .eltdf-fullscreen-menu-holder-outer {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    overflow: hidden !important;
+    z-index: 105;
+    opacity: 0;
+}
+
+.eltdf-fullscreen-fade-out .eltdf-fullscreen-menu-holder-outer {
+    -webkit-animation: fade_out .25s linear both;
+    -moz-animation: fade_out .25s linear both;
+    animation: fade_out .25s linear both;
+}
+
+.eltdf-fullscreen-menu-opened.eltdf-fullscreen-fade-in .eltdf-fullscreen-menu-holder-outer {
+    -webkit-animation: fade_in .25s linear both;
+    -moz-animation: fade_in .25s linear both;
+    animation: fade_in .25s linear both;
+}
+
+/* Fullscreen fade animations general - end
+========================================================================== */
+
+/* Fullscreen animation push text right - begin
+========================================================================== */
+
+@-webkit-keyframes push_text_right {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateX(-60px);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateX(0);
+    }
+}
+
+@-moz-keyframes push_text_right {
+    0% {
+        opacity: 0;
+        -moz-transform: translateX(-60px);
+    }
+    100% {
+        opacity: 1;
+        -moz-transform: translateX(0);
+    }
+}
+
+@keyframes push_text_right {
+    0% {
+        opacity: 0;
+        transform: translateX(-60px)
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0)
+    }
+}
+
+@-webkit-keyframes push_nav_right {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateX(-60px);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateX(0);
+    }
+}
+
+@-moz-keyframes push_nav_right {
+    0% {
+        opacity: 0;
+        -moz-transform: translateX(-60px);
+    }
+    100% {
+        opacity: 1;
+        -moz-transform: translateX(0);
+    }
+}
+
+@keyframes push_nav_right {
+    0% {
+        opacity: 0;
+        transform: translateX(-60px)
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0)
+    }
+}
+
+.eltdf-fullscreen-menu-opened.eltdf-fade-push-text-right .eltdf-fullscreen-menu-holder-outer nav > ul > li > a,
+.eltdf-fullscreen-menu-opened.eltdf-fade-push-text-right .eltdf-fullscreen-menu-holder-outer .eltdf-fullscreen-below-menu-widget-holder > div,
+.eltdf-fullscreen-menu-opened.eltdf-fade-push-text-right .eltdf-fullscreen-menu-holder-outer .eltdf-fullscreen-above-menu-widget-holder > div {
+    @include eltdfAnimation(push_text_right .4s cubic-bezier(0.175, 0.885, 0.32, 1) both);
+}
+
+.eltdf-fade-push-text-right.eltdf-push-nav-right .eltdf-fullscreen-menu-holder-outer nav,
+.eltdf-fade-push-text-right.eltdf-push-nav-right .eltdf-fullscreen-menu-holder-outer .eltdf-fullscreen-below-menu-widget-holder,
+.eltdf-fade-push-text-right.eltdf-push-nav-right .eltdf-fullscreen-menu-holder-outer .eltdf-fullscreen-above-menu-widget-holder {
+    @include eltdfTransition(all .75s ease-out);
+    @include eltdfTransform(translateX(50px));
+}
+
+/* Fullscreen animation push text right - end
+========================================================================== */
+
+/* Fullscreen animation push text top - begin
+========================================================================== */
+
+@-webkit-keyframes push_text_top {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(60px);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+    }
+}
+
+@-moz-keyframes push_text_top {
+    0% {
+        opacity: 0;
+        -moz-transform: translateY(60px);
+    }
+    100% {
+        opacity: 1;
+        -moz-transform: translateY(0);
+    }
+}
+
+@keyframes push_text_top {
+    0% {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
+
+.eltdf-fullscreen-menu-opened.eltdf-fade-push-text-top .eltdf-fullscreen-menu-holder-outer nav > ul > li > a,
+.eltdf-fullscreen-menu-opened.eltdf-fade-push-text-top .eltdf-fullscreen-menu-holder-outer .eltdf-fullscreen-below-menu-widget-holder > div,
+.eltdf-fullscreen-menu-opened.eltdf-fade-push-text-top .eltdf-fullscreen-menu-holder-outer .eltdf-fullscreen-above-menu-widget-holder > div {
+    @include eltdfAnimation(push_text_top .4s ease-out both .5s);
+}
+
+.eltdf-fade-push-text-top.eltdf-push-text-top .eltdf-fullscreen-menu-holder-outer nav,
+.eltdf-fade-push-text-top.eltdf-push-text-top .eltdf-fullscreen-menu-holder-outer .eltdf-fullscreen-below-menu-widget-holder,
+.eltdf-fade-push-text-top.eltdf-push-text-top .eltdf-fullscreen-menu-holder-outer .eltdf-fullscreen-above-menu-widget-holder {
+    @include eltdfTransform(translateY(-30px));
+    @include eltdfTransition(all .75s ease-out);
+}
+
+/* Fullscreen animation push text top - end
+========================================================================== */
+
+/* Fullscreen animation fade text scaledown - begin
+========================================================================== */
+
+.eltdf-fullscreen-menu-opened.eltdf-fade-text-scaledown .eltdf-fullscreen-menu-holder-outer nav,
+.eltdf-fullscreen-menu-opened.eltdf-fade-text-scaledown .eltdf-fullscreen-menu-holder-outer .eltdf-fullscreen-below-menu-widget-holder,
+.eltdf-fullscreen-menu-opened.eltdf-fade-text-scaledown .eltdf-fullscreen-menu-holder-outer .eltdf-fullscreen-above-menu-widget-holder {
+    opacity: 1;
+    @include eltdfTransform(scale(1));
+    @include eltdfTransition(all .25s linear 0.1s);
+}
+
+.eltdf-fade-text-scaledown .eltdf-fullscreen-menu-holder-outer nav,
+.eltdf-fade-text-scaledown .eltdf-fullscreen-menu-holder-outer .eltdf-fullscreen-below-menu-widget-holder,
+.eltdf-fade-text-scaledown .eltdf-fullscreen-menu-holder-outer .eltdf-fullscreen-above-menu-widget-holder {
+    opacity: 0;
+    @include eltdfTransform(scale(1.1));
+    @include eltdfTransition(all .25s linear 0.1s);
+}
+
+/* Fullscreen animation fade text scaledown - end
+========================================================================== */
+
+/* ==========================================================================
+# Fullscreen menu style - end
+==========================================================================*/

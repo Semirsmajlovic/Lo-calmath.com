@@ -1,0 +1,50 @@
+/* ==========================================================================
+   Icon widget style - begin
+   ========================================================================== */
+
+.eltdf-icon-widget-holder {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0;
+
+    > * {
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+		color: inherit;
+		font-size: inherit;
+		line-height: inherit;
+		font-style: inherit;
+		font-weight: inherit;
+		letter-spacing: inherit;
+		text-transform: inherit;
+    }
+
+	.eltdf-icon-text {
+		padding: 0 0 0 10px;
+		
+		&.eltdf-no-icon {
+			padding: 0;
+		}
+	}
+}
+
+.eltdf-dark-header .eltdf-page-header > div:not(.eltdf-sticky-header):not(.fixed) .eltdf-icon-widget-holder {
+    color: $header-dark-color !important;
+
+    &:hover {
+        color: $header-dark-hover-color !important;
+    }
+}
+
+.eltdf-light-header .eltdf-page-header > div:not(.eltdf-sticky-header):not(.fixed) .eltdf-icon-widget-holder {
+    color: $header-light-color !important;
+
+    &:hover {
+        color: $header-light-hover-color !important;
+    }
+}
+/* ==========================================================================
+   Icon widget style - end
+   ========================================================================== */

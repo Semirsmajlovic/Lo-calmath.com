@@ -1,0 +1,19 @@
+@include ipad-portrait {
+    
+    .eltdf-related-posts-holder {
+        
+        .eltdf-related-post {
+            width: 50% !important;
+        }
+    }
+}
+
+@include phone-portrait {
+    
+    .eltdf-related-posts-holder {
+        
+        .eltdf-related-post {
+            width: 100% !important;
+        }
+    }
+}

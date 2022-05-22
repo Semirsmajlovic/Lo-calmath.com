@@ -1,0 +1,38 @@
+/* Template notice style start */
+#bbpress-forums {
+	
+	div.bbp-template-notice {
+		padding: 13px 18px;
+		margin: 0 0 10px 0;
+		color: $default-text-color;
+		background-color: #fefff0;
+		border-color: #f1ebaa;
+		display: inline-block;
+		width: 100%;
+		border-radius: 0;
+		
+		p {
+			font-size: 13px;
+		}
+		
+		a {
+			color: inherit;
+		}
+		
+		img.avatar {
+			border: none;
+			vertical-align: middle;
+			margin-bottom: 0;
+			margin-left: 5px;
+			margin-right: 5px;
+		}
+	}
+	
+	.bbp-breadcrumb + div.bbp-template-notice,
+	.bbp-topic-tags + div.bbp-template-notice {
+		margin: 0 0 20px;
+		width: 100%;
+	}
+}
+
+/* Template notice style end */

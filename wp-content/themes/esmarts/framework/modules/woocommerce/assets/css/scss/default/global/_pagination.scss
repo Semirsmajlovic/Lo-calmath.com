@@ -1,0 +1,107 @@
+/* ==========================================================================
+   WooCommerce Pagination styles - begin
+   ========================================================================== */
+.eltdf-woo-pagination-holder {
+    @include eltdfRelativeHolderLayout();
+    margin: 0 0 93px;
+    clear: both;
+
+    .eltdf-woo-pagination-inner {
+        position: relative;
+        display: table;
+        width: 100%;
+        text-align: right;
+
+		.woocommerce-result-count {
+			position: relative;
+			display: table-cell;
+			vertical-align: middle;
+			width: 100%;
+			margin: 0;
+			text-align: left;
+		}
+    }
+}
+
+.woocommerce-pagination {
+    position: relative;
+    display: table-cell;
+    vertical-align: middle;
+    width: 70%;
+    margin: 0;
+    padding: 0;
+
+    .page-numbers {
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+
+        li {
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0;
+
+            a,
+            span {
+                position: relative;
+                display: inline-block;
+	            width: auto;
+                margin: 0 6px;
+                padding: 0;
+                vertical-align: middle;
+                text-decoration: none;
+                cursor: pointer;
+                white-space: nowrap;
+                font-family: $default-heading-font-m;
+                font-size: 14px;
+                color: #b9b9b9;
+                @include eltdfTransition(color .2s ease-out);
+
+                &:hover,
+                &.current {
+                    color: $first-main-color;
+                }
+            }
+
+            a {
+
+                &.next,
+                &.prev {
+                    font-size: 0;
+                    line-height: 1;
+                    margin: 0 6px 4px 2px;
+
+                    &:before {
+                        display: block;
+                        font-family: 'ElegantIcons';
+                        font-size: 22px;
+                        line-height: inherit;
+                        -webkit-font-smoothing: antialiased;
+                        -moz-osx-font-smoothing: grayscale;
+                    }
+                }
+
+                &.prev {
+
+                    &:before {
+                        content: "\34";
+                    }
+                }
+
+                &.next {
+
+                    &:before {
+                        content: "\35";
+                    }
+                }
+            }
+        }
+    }
+}
+/* ==========================================================================
+   WooCommerce Pagination styles - end
+   ========================================================================== */

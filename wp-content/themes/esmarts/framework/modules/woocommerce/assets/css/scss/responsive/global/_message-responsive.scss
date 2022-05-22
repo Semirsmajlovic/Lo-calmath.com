@@ -1,0 +1,23 @@
+/* ==========================================================================
+   WooCommerce Message Responsive styles - begin
+   ========================================================================== */
+
+@media only screen and (max-width: $phone-landscape) {
+
+    .eltdf-woocommerce-page {
+
+        .woocommerce-message,
+        .woocommerce-info,
+        .woocommerce-error {
+            line-height: 2em;
+
+            a {
+            	float: none;
+                margin: 0 70% 15px 0;
+            }
+        }
+    }
+}
+/* ==========================================================================
+   WooCommerce Message Responsive styles - end
+   ========================================================================== */

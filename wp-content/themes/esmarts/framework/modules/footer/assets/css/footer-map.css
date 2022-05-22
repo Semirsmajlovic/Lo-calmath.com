@@ -1,0 +1,94 @@
+/* ==========================================================================
+   Footer styles - begin
+   ========================================================================== */
+/* common mixins - start */
+/* common mixins - end */
+/* ==========================================================================
+   Footer style - begin
+   ========================================================================== */
+.eltdf-page-footer {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  z-index: 100;
+  box-sizing: border-box;
+}
+
+.eltdf-page-footer.eltdf-has-both-footer .eltdf-footer-bottom-holder .eltdf-footer-bottom-inner {
+  border-top: 1px solid rgba(72, 72, 72, 0.8);
+}
+
+.eltdf-page-footer .eltdf-footer-top-holder {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  background-color: #232936;
+  box-sizing: border-box;
+}
+
+.eltdf-page-footer .eltdf-footer-top-holder .eltdf-footer-top-alignment-center {
+  text-align: center;
+}
+
+.eltdf-page-footer .eltdf-footer-top-holder .eltdf-footer-top-alignment-left {
+  text-align: left;
+}
+
+.eltdf-page-footer .eltdf-footer-top-holder .eltdf-footer-top-alignment-right {
+  text-align: right;
+}
+
+.eltdf-page-footer .eltdf-footer-top-holder .eltdf-footer-top-inner {
+  box-sizing: border-box;
+}
+
+.eltdf-page-footer .eltdf-footer-top-holder .eltdf-footer-top-inner.eltdf-grid {
+  padding: 118px 0;
+}
+
+.eltdf-page-footer .eltdf-footer-top-holder .eltdf-footer-top-inner.eltdf-full-width {
+  padding: 118px 50px 118px;
+}
+
+.eltdf-page-footer .eltdf-footer-bottom-holder {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  background-color: #232936;
+  box-sizing: border-box;
+}
+
+.eltdf-page-footer .eltdf-footer-bottom-holder .eltdf-footer-bottom-inner {
+  box-sizing: border-box;
+}
+
+.eltdf-page-footer .eltdf-footer-bottom-holder .eltdf-footer-bottom-inner.eltdf-grid {
+  padding: 23px 0 24px;
+}
+
+.eltdf-page-footer .eltdf-footer-bottom-holder .eltdf-footer-bottom-inner.eltdf-full-width {
+  padding: 23px 38px 24px;
+}
+
+.eltdf-page-footer .eltdf-footer-bottom-holder .eltdf-grid-col-6:last-child {
+  text-align: right;
+}
+
+@media only screen and (min-width: 769px) {
+  .eltdf-page-footer .eltdf-footer-bottom-holder .eltdf-grid-col-6 {
+    width: 50%;
+    float: left;
+  }
+}
+
+/* ==========================================================================
+   Footer style - end
+   ========================================================================== */
+/* ==========================================================================
+   Footer styles - end
+   ========================================================================== */
+
+/*# sourceMappingURL=../css/footer-map.css.map */

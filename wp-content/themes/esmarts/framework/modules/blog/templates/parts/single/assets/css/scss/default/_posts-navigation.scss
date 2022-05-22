@@ -1,0 +1,84 @@
+/* Single posts navigation styles - begin
+    ====================================================================== */
+
+.eltdf-blog-single-navigation {
+    position: relative;
+    display: table;
+    width: 100%;
+    vertical-align: middle;
+    padding: 0;
+    margin: 50px 0 30px;
+    clear: both;
+    box-sizing: border-box;
+    
+    .eltdf-blog-single-prev,
+    .eltdf-blog-single-next {
+	    
+	    .eltdf-nav-blog-post-image {
+		    
+		    @include ipad-landscape {
+			    display: none;
+			    padding: 0;
+		    }
+	    }
+    
+        div {
+            display: table-cell;
+            vertical-align: top;
+        }
+        
+        .eltdf-blog-single-nav-label {
+            display: block;
+            color: $default-heading-color;
+            font-family: $default-heading-font-m;
+            font-size: 14px;
+            line-height: 22px;
+        }
+        
+        .eltdf-blog-single-nav-title {
+            margin: 0;
+	        color: $default-text-color;
+        }
+    }
+    
+    .eltdf-blog-single-prev {
+        float: left;
+	
+	    div {
+		    padding-right: 25px;
+	    }
+    }
+    
+    .eltdf-blog-single-next {
+        float: right;
+        
+        div {
+            float: right;
+            padding-left: 25px;
+            text-align: right;
+        }
+    }
+    
+    .eltdf-nav-image {
+        display: block;
+        width: 78px;
+    }
+}
+
+.eltdf-single-links-pages {
+    clear: both;
+    margin: 20px 0 5px;
+    
+    .eltdf-single-links-pages-inner {
+        
+        > a,
+        > span {
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0 15px 5px 0;
+        }
+    }
+}
+/* Single posts navigation styles - end
+    ====================================================================== */

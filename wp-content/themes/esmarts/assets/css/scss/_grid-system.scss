@@ -1,0 +1,187 @@
+/* ==========================================================================
+   Grid System style - begin
+   ========================================================================== */
+
+.eltdf-two-columns-form-without-space {
+    
+    .eltdf-column-left {
+        display: table-cell;
+        width: 99%;
+        vertical-align: top;
+    }
+    
+    .eltdf-column-right {
+        display: table-cell;
+        width: 1%;
+        text-align: left;
+        vertical-align: top;
+    }
+}
+
+.eltdf-two-columns-form-with-space {
+	
+	&.eltdf-cf7-newsletter {
+		
+		input {
+			margin: 0 !important;
+		}
+		
+		.wpcf7-form-control-wrap {
+			display: block;
+		}
+		
+		span.wpcf7-not-valid-tip {
+			position: absolute;
+		}
+		
+		.ajax-loader {
+			position: absolute;
+		}
+		
+		@include phone-landscape {
+			
+			.eltdf-column-left,
+			.eltdf-column-right {
+				display: block;
+				width: 100%;
+				text-align: inherit;
+				padding: 0;
+			}
+			
+			.eltdf-column-right {
+				margin-top: 10px;
+			}
+			
+			input.wpcf7-form-control.wpcf7-submit {
+				width: 100%;
+				text-align: center;
+			}
+		}
+	}
+	
+	.eltdf-column-left {
+		display: table-cell;
+		width: 99%;
+		vertical-align: top;
+		padding: 0 10px 0 0;
+		box-sizing: border-box;
+	}
+	
+	.eltdf-column-right {
+		display: table-cell;
+		width: 1%;
+		text-align: left;
+		vertical-align: top;
+		padding: 0;
+		box-sizing: border-box;
+	}
+}
+
+/*
+* If you changed some value for space do the same thing in masonry-type, product-list-main-and-vc scss files
+*/
+$columns_space_label: ('no', 'tiny', 'small', 'normal', 'medium', 'large', 'huge' );
+$columns_space_width: (0, 5, 10, 15, 20, 25, 40);
+
+@for $i from 0 to length($columns_space_label) {
+	.eltdf-#{nth($columns_space_label,$i+1)}-space {
+		$column_width: nth($columns_space_width,$i+1);
+		$column_width_margin: $column_width * 2;
+		
+		&.eltdf-disable-bottom-space {
+			@if($column_width == 0) {
+				margin-bottom: 0;
+			} @else {
+				margin-bottom: -#{$column_width_margin}px;
+			}
+		}
+		
+		.eltdf-outer-space {
+			@if($column_width == 0) {
+				margin: 0;
+			} @else {
+				margin: 0 -#{$column_width}px;
+			}
+			
+			.eltdf-item-space {
+				padding: 0 #{$column_width}px;
+				margin: 0 0 #{$column_width_margin}px;
+			}
+		}
+
+        &.eltdf-disable-item-bottom-space {
+            .eltdf-item-space {
+                margin: 0;
+            }
+        }
+	}
+}
+
+@import 'grid-system-mixin';
+
+.eltdf-grid-row {
+    @include createGridRow();
+    @include eltdfClearfix();
+}
+
+//generate gutter spaces
+$columns_space_label: ('no', 'tiny', 'small', 'normal', 'medium', 'large', 'huge' );
+$columns_space: (0, 5, 10, 15, 20, 25, 40);
+
+@for $i from 0 to length($columns_space_label) {
+    .eltdf-grid-#{nth($columns_space_label,$i+1)}-gutter {
+        $item_space: nth($columns_space, $i+1);
+    
+        //generate holder margin
+        @include createGridRow($item_space);
+        
+        //generate columns padding
+        > div {
+            @include createGridColumnPadding($item_space);
+        }
+    }
+}
+
+//generate column classes
+@for $i from 1 to (map-get($gridConfig, numberOfCols) + 1) {
+    .eltdf-grid-col-#{$i} {
+        @include createGridColumn($i);
+        
+        @include createGridColumnResponsive(map-get($gridConfig, stackOn));
+    }
+}
+
+//generate push / pull classes
+@for $i from 1 to (map-get($gridConfig, numberOfCols) + 1) {
+    .eltdf-grid-col-push-#{$i} {
+        @include createGridColumnPush($i);
+    }
+    
+    .eltdf-grid-col-pull-#{$i} {
+        @include createGridColumnPull($i);
+    }
+}
+
+//generate responsive width column classes
+@for $i from 1 to (map-get($gridConfig, numberOfCols) + 1) {
+    @each $size, $width in $breakpoints {
+        .eltdf-grid-col-#{$size}-#{$i} {
+            $stack: false;
+            
+            //check if current column is max number of columns.
+            //if it is than we need to stack columns
+            @if($i == map-get($gridConfig, numberOfCols)) {
+                $stack: true;
+            }
+            
+            //if current column isn't the max number of columns
+            //than generate responsive for it.
+            @if($i < (map-get($gridConfig, numberOfCols) + 1)) {
+                @include createGridColumnResponsive($size, $i, $stack);
+            }
+        }
+    }
+}
+/* ==========================================================================
+   Grid System style - end
+   ========================================================================== */

@@ -1,0 +1,295 @@
+/* ==========================================================================
+   Header styles - begin
+   ========================================================================== */
+
+$logo-area-height: 96px;
+$menu-area-height: 96px;
+
+.eltdf-page-header {
+    @include eltdfRelativeHolderLayout();
+    margin: 0;
+    padding: 0;
+    z-index: 110;
+    box-sizing: border-box;
+
+    /* ==========================================================================
+    #General header layout - start
+    ========================================================================== */
+    a img {
+        display: block;
+    }
+
+    p {
+        margin: 0;
+    }
+    
+    .eltdf-vertical-align-containers {
+        padding: 0 40px;
+    
+        .eltdf-paspartu-enabled & {
+            padding: 0;
+        }
+    }
+
+    .eltdf-grid {
+        height: 100%;
+
+        .eltdf-vertical-align-containers {
+            padding: 0;
+            @include eltdfTransition(background-color 0.3s ease);
+        }
+    }
+
+    /* ==========================================================================
+    #General header layout - end
+    ========================================================================== */
+
+    /* ==========================================================================
+    #Logo area styles - start
+    ========================================================================== */
+    .eltdf-logo-area {
+	    position: relative;
+	    height: $logo-area-height;
+	    overflow: hidden;
+        background-color: #fff;
+
+        .eltdf-logo-wrapper a {
+            max-height: $logo-area-height;
+        }
+    }
+    /* ==========================================================================
+    #Logo area styles - end
+    ========================================================================== */
+
+    /* ==========================================================================
+    #Menu area styles - start
+    ========================================================================== */
+    .eltdf-menu-area {
+        position: relative;
+        height: $menu-area-height;
+        background-color: #fff;
+        box-sizing: border-box;
+
+        .eltdf-boxed & {
+            padding: 0;
+        }
+
+        .eltdf-logo-wrapper a {
+            max-height: $menu-area-height;
+        }
+
+        .widget {
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0;
+        }
+    }
+    /* ==========================================================================
+    #Menu area styles - end
+    ========================================================================== */
+    
+    /* ==========================================================================
+    #Specific styles - start
+    ========================================================================== */
+    
+    .eltdf-logo-area {
+    
+        .eltdf-logo-area-border-disable & {
+            border: none;
+        }
+        
+        .eltdf-logo-area-in-grid-border-disable & {
+    
+            .eltdf-grid {
+                
+                .eltdf-vertical-align-containers {
+                    border: none;
+                }
+            }
+        }
+    
+        .eltdf-header-logo-area-in-grid-padding & {
+        
+            .eltdf-vertical-align-containers {
+                padding: 0 25px;
+            }
+        }
+    }
+    
+    .eltdf-menu-area {
+    
+        .eltdf-menu-area-shadow-disable & {
+            box-shadow: none;
+    
+            .eltdf-grid {
+        
+                .eltdf-vertical-align-containers {
+                    box-shadow: none;
+                }
+            }
+        }
+    
+        .eltdf-menu-area-border-disable & {
+            border: none;
+        }
+    
+        .eltdf-menu-area-in-grid-border-disable & {
+        
+            .eltdf-grid {
+            
+                .eltdf-vertical-align-containers {
+                    border: none;
+                }
+            }
+        }
+    
+        .eltdf-header-logo-area-in-grid-padding & {
+    
+            .eltdf-vertical-align-containers {
+                padding: 0 25px;
+            }
+        }
+    }
+    /* ==========================================================================
+    #Specific styles - end
+    ========================================================================== */
+}
+
+/* ==========================================================================
+#Light header - begin
+========================================================================== */
+
+.eltdf-light-header {
+
+    .eltdf-page-header > div:not(.fixed):not(.eltdf-sticky-header) {
+
+        .eltdf-logo-wrapper {
+
+            .eltdf-light-logo {
+                opacity: 1;
+            }
+
+            .eltdf-normal-logo,
+            .eltdf-dark-logo {
+                opacity: 0;
+            }
+        }
+
+        .eltdf-menu-area {
+            color: $header-light-color !important; //Beacause of inline color styles
+
+            .widget {
+                color: $header-light-color !important; //Beacause of inline color styles
+
+                p,
+                a,
+                span,
+                i,
+                .widgettitle {
+                    color: $header-light-color !important; //Beacause of inline color styles
+                }
+
+                a:hover {
+                    color: $first-main-color !important; //Beacause of inline color styles
+                }
+            }
+        }
+
+        &.eltdf-menu-area {
+            color: $header-light-color !important; //Beacause of inline color styles
+
+            .widget {
+                color: $header-light-color !important; //Beacause of inline color styles
+
+                p,
+                a,
+                span,
+                i,
+                .widgettitle {
+                    color: $header-light-color !important; //Beacause of inline color styles
+                }
+
+                a:hover {
+                    color: $first-main-color !important; //Beacause of inline color styles
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+#Light header - end
+========================================================================== */
+
+/* ==========================================================================
+#Dark header - begin
+========================================================================== */
+
+.eltdf-dark-header {
+
+    .eltdf-page-header {
+
+        > div:not(.fixed):not(.eltdf-sticky-header) {
+
+            .eltdf-logo-wrapper {
+
+                .eltdf-dark-logo {
+                    opacity: 1;
+                }
+
+                .eltdf-normal-logo,
+                .eltdf-light-logo {
+                    opacity: 0;
+                }
+            }
+
+            .eltdf-menu-area {
+                color: $header-dark-color !important; //Because of inline color styles
+
+                .widget {
+                    color: $header-dark-color !important; //Beacause of inline color styles
+
+                    p,
+                    a,
+                    span,
+                    i,
+                    .widgettitle {
+                        color: $header-dark-color !important; //Beacause of inline color styles
+                    }
+
+                    a:hover {
+                        color: $header-dark-hover-color !important; //Beacause of inline color styles
+                    }
+                }
+            }
+
+            &.eltdf-menu-area {
+                color: $header-dark-color !important; //Because of inline color styles
+
+                .widget {
+                    color: $header-dark-color !important; //Beacause of inline color styles
+
+                    p,
+                    a,
+                    span,
+                    i,
+                    .widgettitle {
+                        color: $header-dark-color !important; //Beacause of inline color styles
+                    }
+
+                    a:hover {
+                        color: $header-dark-hover-color !important; //Beacause of inline color styles
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+#Dark header - end
+========================================================================== */
+
+/* ==========================================================================
+   Header end - end
+   ========================================================================== */

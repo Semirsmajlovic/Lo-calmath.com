@@ -1,0 +1,256 @@
+/* ==========================================================================
+   #Forum Single (Topic) - Start
+   ========================================================================== */
+
+body.bbp-user-page {
+	
+	#bbpress-forums {
+		
+		div.bbp-reply-author {
+			
+			.bbp-author-name {
+				margin: 0;
+				font-size: 14px;
+			}
+			
+			.bbp-author-role {
+				line-height: 18px;
+			}
+			
+			br {
+				display: none;
+			}
+		}
+	}
+}
+
+body.topic {
+	
+	#bbpress-forums {
+		
+		div.reply {
+			padding: 0 20px;
+		}
+		
+		.bbp-pagination:nth-of-type(5) {
+			display: none;
+		}
+		
+		.bbp-topic-tags {
+			display: block;
+			margin-bottom: 30px;
+			float: none;
+		}
+		
+		.bbp-topic-tags,
+		#subscription-toggle,
+		#favorite-toggle {
+			color: $default-text-color;
+			font-weight: 400;
+			font-size: 14px;
+			
+			a {
+				color: $default-text-color;
+				
+				&:hover {
+					color: $default-heading-color;
+				}
+			}
+			
+			p {
+				margin: 0;
+			}
+			
+			.bbp-breadcrumb-current {
+				color: $default-heading-color;
+			}
+		}
+		
+		.bbp-replies {
+			border-left: 1px solid $default-border-color;
+			border-right: 1px solid $default-border-color;
+			border-top: 1px solid $default-border-color;
+			margin-bottom: 0;
+			
+			li.bbp-header {
+				padding-top: 13px;
+				padding-bottom: 13px;
+				padding-right: 30px;
+				border-bottom: 0;
+				
+				.bbp-reply-author {
+					width: auto;
+					margin-left: 27px;
+				}
+				
+				.bbp-reply-content {
+					margin-left: 170px;
+				}
+				
+				.bbp-reply-content,
+				.bbp-reply-author {
+					color: $table_headings;
+					font-size: 14px;
+					font-weight: 600;
+				}
+			}
+			
+			li.bbp-body {
+				padding: 0;
+				border-bottom: 1px solid $default-border-color;
+				
+				.bbp-reply-header {
+					font-size: 14px;
+					font-weight: 600;
+					width: 100%;
+					padding: 10px 30px;
+					background-color: #f5f7f7;
+					
+					.bbp-reply-post-date {
+						color: #818080
+					}
+					
+					.bbp-admin-links {
+						color: #808081;
+						font-weight: 300;
+						
+						a {
+							color: #818080;
+							font-size: 13px;
+							font-weight: 300;
+							text-transform: none;
+							
+							&:hover {
+								color: $default-heading-color;
+							}
+						}
+					}
+					
+					a.bbp-reply-permalink {
+						color: #808081;
+						
+						&:hover {
+							color: $default-heading-color;
+						}
+					}
+				}
+				
+				.topic-author {
+					
+					&.even {
+						padding: 0 22px;
+					}
+					
+					&.odd {
+						padding: 0 30px;
+					}
+				}
+				
+				.bbp-reply-author {
+					width: auto;
+					margin-top: 20px;
+					
+					.bbp-author-avatar {
+						display: block;
+						
+						img {
+							display: block;
+							margin: 0 auto;
+						}
+					}
+					
+					.bbp-author-name {
+						padding: 0;
+						text-align: left;
+					}
+					
+					> a,
+					> a > img {
+						margin: 0;
+					}
+				}
+				
+				.bbp-reply-content {
+					margin-left: 120px;
+					padding: 25px 12px 20px 0;
+					
+					ul.bbp-reply-revision-log {
+						margin: 11px 0 0 0;
+					}
+					
+					> p {
+						margin: 0;
+						font-size: 13px;
+					}
+				}
+				
+				> div.topic-author {
+					padding: 0;
+				}
+				
+				div.bbp-reply-author {
+					text-align: center;
+					
+					br,
+					.bbp-reply-ip {
+						display: none;
+					}
+					
+					.bbp-author-name {
+						margin-top: 8px;
+						font-size: 14px;
+					}
+					
+					.bbp-author-role {
+						line-height: 18px;
+						font-style: normal;
+						margin-top: 0;
+					}
+				}
+			}
+		}
+		
+		.bbp-reply-form {
+			border: 1px solid $default-border-color;
+			padding-bottom: 46px;
+			background-color: #fff;
+			
+			div.bbp-template-notice {
+				padding: 0 30px;
+				background-color: transparent;
+				border: none;
+				
+				p {
+					font-size: 14px;
+					padding: 18px 18px;
+					margin: 0 0 10px 0;
+					color: #303030;
+					background-color: #fff8dd;
+					border: 1px solid #ffe275;
+					display: inline-block;
+					width: 100%;
+					border-radius: 0;
+				}
+			}
+			
+			.bbp-form > div:not(.bbp-template-notice) > p {
+				float: none;
+			}
+		}
+	}
+}
+
+/* ==========================================================================
+   #Forum Single (Topic) - End
+   ========================================================================== */
+
+#bbpress-forums li.bbp-body ul.topic {
+	padding: 8px 0;
+}
+
+li.bbp-forum-topic-count,
+li.bbp-topic-voice-count,
+li.bbp-forum-reply-count,
+li.bbp-topic-reply-count {
+	width: 11%;
+}

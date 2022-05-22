@@ -1,0 +1,40 @@
+/* ==========================================================================
+   WooCommerce Result and Ordering styles - begin
+   ========================================================================== */
+.eltdf-woocommerce-page {
+
+    .woocommerce-result-count,
+    .woocommerce-ordering {
+        display: inline;
+        width: 50%;
+		float: left;
+		margin: 0 0 50px;
+		font-family: $default-heading-font-m;
+		font-size: 14px;
+		font-weight: 400;
+        line-height: 54px;
+        box-sizing: border-box;
+    }
+
+    .woocommerce-result-count {
+		color: $default-text-color;
+    }
+
+    .woocommerce-ordering {
+        text-align: right;
+        
+        .orderby {
+            width: auto;
+            min-width: 195px;
+	        margin: 0;
+	        text-align: initial;
+        }
+
+        .select2-container--default {
+            top: -2px;
+        }
+    }
+}
+/* ==========================================================================
+   WooCommerce Result and Ordering styles - end
+   ========================================================================== */

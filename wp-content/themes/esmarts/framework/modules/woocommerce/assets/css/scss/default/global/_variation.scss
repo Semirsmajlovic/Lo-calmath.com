@@ -1,0 +1,117 @@
+/* ==========================================================================
+   WooCommerce Variation styles - begin
+   ========================================================================== */
+
+.eltdf-woocommerce-page .eltdf-content {
+    
+    .variations {
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0;
+        border: none;
+        padding: 0;
+        
+        tr {
+            display: block;
+            padding: 0 0 20px;
+            border: 0;
+            float: left;
+            width: 48%;
+            
+            &:last-child {
+                margin: 0;
+            }
+        }
+        
+        td {
+            padding: 0;
+            text-align: initial;
+	        
+	        &.label {
+		        padding-right: 10px;
+                padding-bottom: 4px;
+                display: block;
+                font-weight: 600;
+                font-size: 13px;
+                color: #545454;
+	        }
+	        
+	        &.value {
+		        white-space: nowrap;
+		        
+		        select {
+			        width: auto;
+			        min-width: 200px;
+		        }
+	        }
+        }
+        
+        .reset_variations {
+	        margin: 0 0 0 15px;
+            color: $default-heading-color;
+        }
+    }
+    
+    .single_variation_wrap {
+        margin: 35px 0 0;
+        
+        .single_variation {
+            margin: 0 0 35px;
+        }
+    }
+    
+    table.group_table {
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0;
+        border: none;
+        padding: 0;
+        
+        tbody {
+            display: block;
+        }
+        
+        tr {
+            display: block;
+            padding: 0 0 10px;
+            border: 0;
+            margin-bottom: 5px;
+            
+            &:last-child {
+                margin: 0;
+            }
+        }
+        
+        td {
+            padding: 0 17px 10px 0;
+            text-align: left;
+            
+            &.price {
+                display: table-cell;
+                vertical-align: middle;
+                font-size: 19px;
+            }
+            
+            &:last-child {
+                padding: 0 0 10px;
+            }
+        }
+        
+        .eltdf-quantity-buttons {
+            margin: 0;
+        }
+        
+        a:not([class*="add_to_cart"]) {
+            color: $default-text-color;
+            
+            &:hover {
+                color: $default-heading-color;
+            }
+        }
+    }
+}
+/* ==========================================================================
+   WooCommerce Variation styles - end
+   ========================================================================== */

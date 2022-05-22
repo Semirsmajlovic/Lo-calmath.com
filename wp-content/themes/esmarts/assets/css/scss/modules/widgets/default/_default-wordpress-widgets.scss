@@ -1,0 +1,716 @@
+/* ==========================================================================
+   #Search tweak begin
+   ========================================================================== */
+
+// WEBKIT
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+    display: none;
+}
+
+// IE
+input[type="search"]::-ms-clear {
+    display: none;
+}
+
+input[type=text]::-ms-clear {
+    display: none;
+}
+
+/* ==========================================================================
+   #Search tweak end
+   ========================================================================== */
+
+/* ==========================================================================
+   Sidebar area styles - begin
+   ========================================================================== */
+
+aside.eltdf-sidebar {
+    position: relative;
+    z-index: 11;
+    margin: 0 0 60px;
+
+    .widget {
+
+        &:last-child {
+            margin: 0 !important;
+        }
+	
+	    &.eltdf-course-list-widget {
+		    
+		    .eltdf-cl-minimal {
+			    
+			    article {
+				    
+				    .eltdf-cli-text-holder {
+					    vertical-align: top;
+				    }
+				
+				    .eltdf-ci-price-holder {
+					    margin-top: 5px;
+					    font-family: $default-heading-font-m;
+					    font-size: 14px;
+					    line-height: 23px;
+					    
+					    span {
+						    padding: 0;
+						    border-radius: 0;
+						    color: $aditional-text-color;
+						    background-color: transparent;
+						    
+						    &.eltdf-ci-price-free {
+								color: $first-main-color;
+						    }
+					    }
+				    }
+			    }
+		    }
+	    }
+	
+	    &.widget_nav_menu {
+		    
+		    ul.menu {
+			    
+			    > li {
+				    margin-bottom: 21px;
+				    
+				    &:last-child {
+					    margin-bottom: 0;
+				    }
+				    
+				    > a {
+					    font-family: $default-heading-font-m;
+					    font-size: 18px;
+					    line-height: 1.5em;
+					    font-weight: 700;
+				    }
+				    
+				    &.menu-item-has-children {
+					    
+					    > a {
+						    position: relative;
+						    display: block;
+						    padding-left: 30px;
+						    box-sizing: border-box;
+						    
+						    &.eltdf-custom-menu-active {
+							    color: $first-main-color;
+							
+							    &:before {
+								    @include eltdfTransform(rotate(90deg));
+							    }
+						    }
+						
+						    &:before {
+							    position: absolute;
+							    top: -2px;
+							    left: -9px;
+							    content: "\35";
+							    font-family: 'ElegantIcons';
+							    font-size: 25px;
+							    line-height: inherit;
+							    font-weight: 400;
+							    color: $first-main-color;
+						    }
+					    }
+				    }
+				
+				    ul.sub-menu {
+					    border-top: none;
+					    padding-left: 30px;
+					    margin-top: 20px;
+					    display: none;
+					    
+					    li {
+						    padding: 4px 0;
+						    margin: 0;
+						    
+						    &.current-menu-item {
+							    
+							    > a {
+								    color: $first-main-color;
+							    }
+						    }
+						    
+						    a {
+							    color: $default-text-color;
+							    
+							    &:hover {
+								    color: $first-main-color;
+							    }
+						    }
+					    }
+				    }
+			    }
+		    }
+	    }
+	}
+}
+
+.wpb_widgetised_column {
+    position: relative;
+
+    .widget {
+	
+	    &:last-child {
+		    margin: 0 !important;
+	    }
+    }
+}
+/* ==========================================================================
+   Sidebar area styles - end
+   ========================================================================== */
+
+/* ==========================================================================
+   Default WordPress Widgets styles - begin
+   ========================================================================== */
+
+.widget {
+	margin: 0 0 35px;
+	
+	.eltdf-widget-title {
+		margin: 0 0 21px;
+		
+		a {
+			color: inherit;
+		}
+	}
+	
+	ul {
+		padding: 0;
+		margin: 0;
+		list-style: none;
+		
+		li {
+			margin: 0 0 23px;
+			padding: 0;
+			font-family: $default-heading-font-m;
+			font-size: 14px;
+			line-height: 23px;
+			
+			p {
+				margin: 0;
+			}
+			
+			&:last-child {
+				margin: 0;
+			}
+		}
+	}
+
+    /*
+    *   Specific styles
+    */
+    &.widget_text {
+	
+	    .eltdf-widget-title {
+		    margin: 0 0 21px;
+	    }
+
+        img {
+            display: block;
+        }
+    }
+
+    #wp-calendar {
+        width: 100%;
+        text-align: center;
+	    
+	    .eltdf-side-menu & {
+		    max-width: 320px;
+	    }
+
+        caption {
+            color: $default-heading-color;
+            margin: 0 0 15px;
+        }
+
+        th, td {
+            padding: 3px 4px;
+        }
+
+        td#today {
+            color: #fff;
+            background-color: $first_main_color;
+
+            a {
+                color: inherit;
+            }
+        }
+    }
+
+    &.widget_rss {
+
+        .eltdf-widget-title {
+
+            .rsswidget {
+
+                &:hover {
+                    color: $first-main-color;
+                }
+            }
+        }
+
+        .rss-widget-icon {
+            display: inline-block;
+        }
+
+        ul {
+
+            li {
+                margin: 0 0 25px;
+
+                .rss-date {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    &.widget_search {
+
+        form {
+            @include eltdfRelativeHolderLayout();
+            clear: both;
+
+            > div {
+                @include eltdfRelativeHolderLayout();
+                border: 1px solid $default-border-color;
+	            border-radius: 30px;
+	            box-shadow: 3px 4px 6px 0px rgba(0, 0, 0, 0.02);
+	            overflow: hidden;
+                box-sizing: border-box;
+            }
+        }
+
+        input,
+        button {
+            position: relative;
+            display: inline-block;
+            vertical-align: top;
+            float: left;
+            height: 48px;
+            font-family: $default-heading-font-m;
+            font-size: 14px;
+	        font-weight: 400;
+	        color: $default-text-color;
+            background-color: #fff;
+            border: 0;
+	        border-radius: 0;
+            outline: 0;
+            -webkit-appearance: none;
+            box-sizing: border-box;
+            @include eltdfTransition(color .2s ease-out);
+        }
+
+        input {
+            width: calc(100% - 60px);
+	        height: 46px;
+            padding: 10px 0 10px 28px;
+	        line-height: 26px;
+	        border-radius: 30px 0 0 30px;
+	        overflow: hidden;
+	        
+	        &:focus {
+		        color: $default-heading-color;
+	        }
+	
+	        @include eltdfPlaceholder {
+		        color: inherit;
+	        }
+        }
+
+        button {
+	        padding: 0;
+            width: 60px;
+            font-size: 14px;
+	        line-height: 46px;
+            cursor: pointer;
+	
+	        &:hover {
+		        color: $default-heading-color;
+	        }
+
+            span {
+                display: block;
+                line-height: inherit;
+
+                &:before {
+                    display: block;
+                    line-height: inherit;
+                }
+            }
+        }
+    }
+
+    &.widget_pages,
+    &.widget_archive,
+    &.widget_categories,
+    &.widget_meta,
+    &.widget_recent_comments,
+    &.widget_recent_entries,
+    &.widget_nav_menu {
+	
+	    .eltdf-widget-title {
+		    margin: 0 0 27px;
+	    }
+
+        ul {
+
+            li {
+
+                ul {
+                    margin: 13px 0 0;
+                    padding: 0 0 0 13px;
+                }
+            }
+        }
+    }
+
+    &.widget_recent_entries {
+
+        ul {
+
+            li {
+
+                > span {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    &.widget_archive,
+    &.widget_categories,
+    &.widget_text {
+
+        select {
+            width: 100%;
+            max-width: 100%;
+            height: 46px;
+            padding: 0 25px;
+            line-height: 44px;
+            color: #969696;
+            background-color: #fff;
+            border: 1px solid $default-border-color;
+	        border-radius: 30px;
+            font-family: $default-heading-font-m;
+            font-size: 14px;
+            font-style: inherit;
+            font-weight: inherit;
+            outline: none;
+            box-sizing: border-box;
+	
+	        .eltdf-side-menu & {
+		        max-width: 320px;
+	        }
+        }
+    }
+
+    &.posts_holder {
+
+        ul {
+            
+            li {
+
+                &.page_item_has_children {
+
+                    & > a {
+                        display: block;
+                    }
+
+                    & > ul.children {
+                        padding-left: 10px;
+                    }
+                }
+
+                &.menu-item-has-children {
+
+                    & > a {
+                        display: block;
+                    }
+
+                    & > ul.sub-menu {
+                        padding-left: 10px;
+                    }
+                }
+            }
+        }
+    }
+
+    &.widget_tag_cloud {
+
+        a {
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+            font-family: $default-heading-font-m;
+            font-size: 14px !important;
+	        line-height: 23px;
+	        font-weight: 400;
+            background-color: transparent;
+
+            &:after {
+                content: ',';
+                color: inherit;
+                margin: 0;
+            }
+
+            &:last-child {
+
+                &:after {
+                    display: none;
+                }
+            }
+        }
+    }
+	
+	&.widget_media_image {
+		
+		.eltdf-widget-title {
+			margin: 0 0 37px;
+		}
+	}
+	
+	&.eltdf-course-categories-widget {
+		
+		.eltdf-widget-title {
+			margin: 0 0 30px;
+		}
+		
+		.eltdf-course-categories-list-title {
+			
+			> * {
+				display: inline-block;
+				vertical-align: top;
+				line-height: inherit;
+			}
+			
+			> span,
+			> i {
+				color: $first-main-color;
+				font-size: 18px;
+				margin-right: 15px;
+			}
+		}
+	}
+	
+	&.eltdf-course-features-widget {
+		
+		.eltdf-widget-title {
+			margin: 0 0 15px;
+		}
+	}
+	
+	&.eltdf-course-list-widget {
+		
+		.eltdf-widget-title {
+			margin: 0 0 24px;
+		}
+		
+		.eltdf-course-list-holder {
+			
+			article {
+				
+				&:last-child {
+					margin-bottom: 0;
+				}
+				
+				.eltdf-cli-top-info {
+					margin-top: 1px;
+					vertical-align: top;
+					font-family: inherit;
+					font-size: 18px;
+				}
+			}
+		}
+	}
+}
+
+.vc_wp_search {
+
+    .widget {
+
+        &.widget_search {
+
+            form {
+
+                > div {
+                    background-color: #fff;
+                    border: none;
+                }
+            }
+
+            input {
+                width: calc(100% - 66px);
+                padding: 0 0 0 33px;
+                font-size: 15px;
+            }
+
+            button {
+                width: 66px;
+                padding: 0 39px 0 9px;
+            }
+        }
+    }
+}
+
+.eltdf-page-footer {
+
+    .widget {
+	    margin: 0 0 30px;
+	    color: rgba(#fff, .7);
+	
+	    &:last-child {
+		    margin: 0 !important;
+	    }
+	    
+        h1, h2, h3, h4, h5, h6 {
+            margin: 0;
+	        color: #fff;
+        }
+	
+	    .eltdf-widget-title {
+		    color: #fff;
+		    margin: 0 0 25px;
+	    }
+    
+        p {
+            margin-top: 0;
+        }
+	
+	    a {
+		    color: rgba(#fff, .7);
+		
+		    &:hover {
+			    color: $first-main-color;
+		    }
+	    }
+	
+	    #wp-calendar {
+		
+		    caption {
+			    color: #fff;
+		    }
+		
+		    td#today {
+			    color: #fff;
+			    background-color: $first-main-color;
+		    }
+	    }
+	
+	    &.widget_rss {
+		
+		    .eltdf-widget-title {
+			
+			    .rsswidget {
+				
+				    &:hover {
+					    color: $first-main-color;
+				    }
+			    }
+		    }
+	    }
+	
+	    &.widget_search {
+		
+		    form {
+			
+			    > div {
+				    border-color: #fff;
+			    }
+		    }
+	    }
+	    
+	    &.widget_archive,
+	    &.widget_categories,
+	    &.widget_text {
+		
+		    select {
+			    border-color: #fff;
+		    }
+	    }
+	
+	    &.eltdf-course-list-widget {
+		
+		    .eltdf-course-list-holder {
+			    
+			    article {
+				
+				    .eltdf-cli-top-info {
+					    color: rgba(#fff, .7);
+					    
+					    a {
+						    color: inherit;
+						    
+						    &:hover {
+							    color: $first-main-color;
+						    }
+					    }
+				    }
+			    }
+		    }
+	    }
+    }
+}
+
+.eltdf-footer-bottom-holder {
+    
+    .widget {
+        font-family: $default-heading-font-m;
+        font-size: 14px;
+        line-height: 26px;
+	    color: rgba(#fff, .4);
+    
+        p {
+            margin: 0;
+        }
+        
+        span {
+            font-size: 12px;
+        }
+	
+	    a {
+		    color: rgba(#fff, .4);
+		
+		    &:hover {
+			    color: $first-main-color;
+		    }
+	    }
+    }
+}
+
+.eltdf-top-bar {
+
+    .widget {
+        display: inline-block;
+        vertical-align: middle;
+	    margin: 0 5px 0 0;
+	    
+	    &:last-child {
+		    margin: 0;
+	    }
+
+        p {
+            margin: 0;
+        }
+
+        &.widget_nav_menu {
+
+            ul {
+                clear: both;
+
+                li {
+                    float: left;
+                    padding: 0 8px;
+                    margin: 0;
+                }
+            }
+        }
+    }
+}
+/* ==========================================================================
+   Default WordPress Widgets styles - end
+   ========================================================================== */

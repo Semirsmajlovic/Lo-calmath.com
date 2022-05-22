@@ -1,0 +1,93 @@
+/* ==========================================================================
+   Contact Form 7 widget style - begin
+   ========================================================================== */
+
+.eltdf-contact-form-7-widget {
+
+	&.eltdf-cf7-skin-boxed-solid {
+		
+		.eltdf-cf7-content-inner {
+			padding: 31px 27px 46px;
+			background-color: $aditional-blue-color;
+			box-shadow: none;
+		}
+		
+		.eltdf-cf7-title,
+		.eltdf-cf7-description {
+			color: #fff;
+		}
+		
+		.eltdf-cf7-description {
+			margin-bottom: 18px;
+		}
+		
+		input.wpcf7-form-control {
+			
+			&.wpcf7-submit {
+				width: auto;
+			}
+		}
+	}
+	
+	.eltdf-cf7-content-holder {
+		@include eltdfRelativeHolderLayout();
+		padding: 2px;
+		overflow: hidden;
+		box-sizing: border-box;
+	}
+	
+	.eltdf-cf7-content-inner {
+		@include eltdfRelativeHolderLayout();
+		padding: 39px 30px 50px;
+		background-color: #fff;
+		border-radius: 6px;
+		box-shadow: $box-shadow-variable;
+		box-sizing: border-box;
+		
+		> form {
+			@include eltdfRelativeHolderLayout();
+		}
+	}
+	
+	.eltdf-cf7-mark {
+		position: absolute;
+		top: 12px;
+		right: -38px;
+		display: inline-block;
+		vertical-align: top;
+		height: 36px;
+		margin: 0;
+		padding: 0 45px 0 47px;
+		line-height: 37px;
+		color: #fff;
+		background-color: $first-main-color;
+		@include eltdfTransform(rotate(40deg));
+	}
+	
+	.eltdf-cf7-title {
+		margin: 0;
+		text-align: center;
+	}
+	
+	.eltdf-cf7-description {
+		margin: 0 0 34px;
+		color: #b9b9b9;
+		text-align: center;
+	}
+	
+	input.wpcf7-form-control {
+		
+		&.wpcf7-submit {
+			margin-top: 28px;
+			width: 100%;
+			text-align: center;
+		}
+	}
+	
+	div.wpcf7 .ajax-loader {
+		position: absolute;
+	}
+}
+/* ==========================================================================
+   Contact Form 7 widget style - end
+   ========================================================================== */

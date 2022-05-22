@@ -1,0 +1,71 @@
+/* ==========================================================================
+   Blog List shortcode - Simple type style - begin
+   ========================================================================== */
+
+.eltdf-blog-list-holder {
+    
+    &.eltdf-bl-simple {
+        
+        .eltdf-post-image {
+            display: table-cell;
+            vertical-align: top;
+	        width: 1%;
+            overflow: hidden;
+            border-radius: 4px;
+            
+            img {
+                border-radius: 4px;
+            }
+
+            a {
+	            width: 150px;
+                @include eltdfTransform(scale(1));
+                @include eltdfTransition(transform .3s cubic-bezier(0.34, 0.52, 0.57, 1.04));
+
+                &:hover {
+                    @include eltdfTransform(scale(1.05));
+                }
+
+                &:after {
+                    content: none;
+                }
+            }
+        }
+        
+        .eltdf-bli-content {
+            display: table-cell;
+            vertical-align: top;
+            width: 99%;
+            padding-left: 20px;
+        }
+	    
+	    .eltdf-post-title {
+		    margin-top: 5px;
+		    line-height: 1.181818181818182em;
+	    }
+	
+	    .eltdf-post-excerpt {
+		    margin: 16px 0 0;
+	    }
+	
+	    .eltdf-bli-info {
+		    margin-top: 18px;
+	    }
+	    
+	    @include phone-landscape {
+		
+		    .eltdf-post-image {
+			    display: block;
+		    }
+		
+		    .eltdf-bli-content {
+			    display: block;
+			    padding-left: 0;
+			    padding-top: 20px;
+		    }
+	    }
+    }
+}
+/* ==========================================================================
+   Blog List shortcode - Simple type style - end
+   ========================================================================== */

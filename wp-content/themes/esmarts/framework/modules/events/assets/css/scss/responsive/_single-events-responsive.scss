@@ -1,0 +1,26 @@
+@include phone-landscape {
+	
+	.eltdf-tribe-events-single {
+		
+		.eltdf-events-single-main-info {
+			
+			.eltdf-events-single-date-holder {
+				position: relative;
+			}
+			
+			.eltdf-events-single-title-holder {
+				position: static;
+				margin-top: 20px;
+				padding: 0;
+			}
+			
+			.tribe-events-cal-links {
+				margin-top: 0;
+			}
+		}
+		
+		.eltdf-events-nav-text {
+			display: none !important;
+		}
+	}
+}

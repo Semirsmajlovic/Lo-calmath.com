@@ -1,0 +1,46 @@
+/* ==========================================================================
+   Blog Single style - begin
+   ========================================================================== */
+
+.eltdf-blog-holder.eltdf-blog-single {
+	
+	article {
+		margin: 0 0 30px;
+
+		&:hover {
+			.eltdf-post-image img {
+				@include eltdfTransform(scale(1));
+			}
+		}
+		
+		&.eltdf-post-has-media {
+			
+			.eltdf-post-heading {
+				margin-bottom: 39px;
+			}
+		}
+		
+		.eltdf-post-heading {
+			
+			.eltdf-owl-slider {
+				margin-bottom: 29px;
+			}
+		}
+		
+		&.format-video,
+		&.format-audio {
+			
+			.eltdf-post-heading {
+				margin-bottom: 29px;
+			}
+		}
+		
+		.eltdf-post-text-main {
+			margin-top: 11px;
+		}
+
+	}
+}
+/* ==========================================================================
+   Blog Single style - end
+   ========================================================================== */

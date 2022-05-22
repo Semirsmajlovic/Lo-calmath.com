@@ -1,0 +1,297 @@
+/* ==========================================================================
+   #Widget styles - start
+   ========================================================================== */
+
+.eltdf-bbp-search-form {
+	@include eltdfRelativeHolderLayout();
+	
+	.eltdf-form-holder {
+		@include eltdfRelativeHolderLayout();
+		border: 1px solid $default-border-color;
+		border-radius: 30px;
+		overflow: hidden;
+		box-sizing: border-box;
+		
+		.eltdf-search-field,
+		button {
+			position: relative;
+			display: inline-block;
+			vertical-align: top;
+			margin: 0;
+			float: left;
+			height: 46px;
+			font-family: $default-heading-font-m;
+			font-size: 14px;
+			line-height: 44px;
+			font-weight: 400;
+			color: #969696;
+			background-color: #fff;
+			border: 0;
+			border-radius: 0;
+			outline: 0;
+			-webkit-appearance: none;
+			box-sizing: border-box;
+			@include eltdfTransition(color .2s ease-out);
+		}
+		
+		.eltdf-search-field {
+			width: calc(100% - 50px);
+			padding: 0 0 0 25px;
+			
+			&:focus {
+				color: $default-heading-color;
+			}
+			
+			@include eltdfPlaceholder {
+				color: inherit;
+			}
+		}
+		
+		button {
+			width: 50px;
+			font-size: 15px;
+			cursor: pointer;
+			
+			&:hover {
+				color: $default-heading-color;
+			}
+			
+			span {
+				display: block;
+				line-height: inherit;
+				
+				&:before {
+					display: block;
+					line-height: inherit;
+				}
+			}
+		}
+	}
+	
+	.eltdf-search-label {
+		display: block;
+		margin: 15px 0 0;
+	}
+}
+
+.eltdf-sidebar {
+	
+	.widget_display_search {
+		@include eltdfRelativeHolderLayout();
+	}
+	
+	.widget.widget_display_replies,
+	.widget.widget_display_topics {
+		
+		ul li {
+			font-weight: 400;
+			font-size: 13px;
+			color: $first-main-color;
+			border-bottom: 1px solid $default-border-color;
+			margin-top: 10px;
+			margin-bottom: 11px;
+			padding-bottom: 7px;
+			
+			a {
+				display: inline-block;
+				font-family: inherit;
+				font-size: inherit;
+				font-weight: inherit;
+				border: none;
+				margin: 0;
+				padding: 0;
+				font-weight: 500;
+				
+			}
+			
+			div {
+				font-size: 12px;
+			}
+		}
+		
+		.bbp-author-avatar {
+			padding-right: 5px;
+		}
+	}
+	
+	.widget_display_views,
+	.widget_display_forums {
+		
+		li {
+			a {
+				
+				font-size: 13px;
+				color: $default-text-color;
+				line-height: 43px;
+				position: relative;
+				display: block;
+				font-weight: 500;
+				padding: 0 10px 0 0;
+				margin: 0;
+				overflow: hidden;
+				@include eltdfTransition(padding .2s ease);
+				
+				&:after {
+					position: absolute;
+					top: 50%;
+					left: -15px;
+					display: inline-block;
+					vertical-align: middle;
+					font-family: "IonIcons";
+					content: "\f3d1";
+					speak: none;
+					color: $first-main-color;
+					font-size: 17px;
+					text-transform: none;
+					text-rendering: auto;
+					line-height: 17px;
+					-webkit-font-smoothing: antialiased;
+					-moz-osx-font-smoothing: grayscale;
+					@include eltdfTransform(translateY(-50%));
+					@include eltdfTransition(left .2s cubic-bezier(0.54, 0.49, 0, 1.75));
+				}
+				
+				&:hover {
+					color: $first-main-color;
+					padding: 0 15px 0 15px;
+					
+					&:after {
+						left: 0;
+					}
+				}
+			}
+		}
+	}
+	
+	.widget_display_stats {
+		
+		dl {
+			font-size: 13px;
+			
+			> * {
+				display: inline-block;
+				float: left;
+				border-bottom: 1px solid $default-border-color;
+				margin: 0 0 5px;
+				padding: 0 0 5px;
+			}
+			
+			dt {
+				width: 80%;
+				font-weight: 500;
+				font-size: 13px;
+				color: $default-text-color;
+			}
+			
+			dd {
+				color: $default-text-color;
+				width: 20%;
+				text-align: right;
+				font-weight: 300;
+				
+				&:last-child {
+					margin-bottom: 28px;
+				}
+				
+				strong {
+					
+					&:before {
+						content: "(";
+					}
+					
+					&:after {
+						content: ")";
+					}
+				}
+			}
+		}
+	}
+	
+	.bbp_widget_login {
+		
+		.bbp-logged-in {
+			
+			> * {
+				margin: 0;
+				line-height: 16px;
+				
+				> a {
+					font-size: 16px;
+					line-height: 1em;
+					font-weight: 500;
+				}
+			}
+		}
+		
+		input[type=text],
+		input[type=password] {
+			width: 100%;
+			margin-bottom: 0px;
+			padding: 16px 20px;
+			outline: 0;
+			font-size: 14px;
+			color: #767676;
+			border: none;
+			background-color: #f5f7f7;
+			box-sizing: border-box;
+			resize: none;
+			@include eltdfTransition(border-color 0.2s ease-out);
+			
+			&:focus {
+				border-color: $default-heading-color;
+			}
+		}
+		
+		label {
+			font-size: 12px;
+			padding-bottom: 5px;
+		}
+		
+		.bbp-username {
+			margin-top: 0;
+		}
+		
+		.bbp-remember-me {
+			label {
+				font-size: 12px;
+			}
+			input {
+				vertical-align: middle;
+			}
+		}
+		
+		.bbp-submit-wrapper {
+			text-align: left;
+			float: none;
+		}
+		
+		.logout-link {
+			color: $default-text-color;
+			font-weight: 700;
+			font-size: 12px;
+		}
+		
+		button {
+			position: relative;
+			display: inline-block;
+			vertical-align: middle;
+			outline: none;
+			font-size: 13px;
+			line-height: 2.714285714285714em;
+			padding: 0 35px;
+			color: #fff;
+			background-color: $default-heading-color;
+			border-width: 0; /* disable border over button when icon is used */
+			cursor: pointer;
+			@include eltdfTransition(background-color 0.15s ease-out, color 0.15s ease-out);
+			
+			&:hover {
+				background-color: $first-main-color;
+			}
+		}
+	}
+}
+
+/* ==========================================================================
+   #Widget styles - end
+   ========================================================================== */

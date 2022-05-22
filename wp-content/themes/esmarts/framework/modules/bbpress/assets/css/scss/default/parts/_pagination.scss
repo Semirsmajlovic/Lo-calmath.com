@@ -1,0 +1,15 @@
+/* Pagination style start */
+#bbpress-forums {
+	
+	.bbp-pagination {
+		margin: 17px 0;
+		color: $default-text-color;
+		font-size: 13px;
+	}
+	
+	.bbp-template-notice + .bbp-pagination {
+		margin: 0 0 41px;
+	}
+}
+
+/* Pagination style end */

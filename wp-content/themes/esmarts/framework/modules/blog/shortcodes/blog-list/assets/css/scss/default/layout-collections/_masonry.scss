@@ -1,0 +1,54 @@
+/* ==========================================================================
+   Blog List shortcode - Masonry type style - begin
+   ========================================================================== */
+
+.eltdf-blog-list-holder {
+	
+	&.eltdf-bl-masonry {
+		transition: none !important;
+		overflow: visible !important;
+		
+		.eltdf-blog-list {
+			opacity: 0;
+			@include eltdfTransition(opacity .2s ease-out);
+		}
+		
+		.eltdf-bl-item {
+			vertical-align: top;
+			z-index: 100;
+		}
+		
+		.eltdf-bl-item,
+		.eltdf-bl-grid-sizer {
+			width: 100%;
+		}
+		
+		.eltdf-bl-grid-gutter {
+			width: 0;
+		}
+		
+		$masonry_columns_number: ('two', 'three', 'four', 'five');
+		
+		@for $i from 0 to length($masonry_columns_number) {
+			&.eltdf-bl-#{nth($masonry_columns_number,$i+1)}-columns {
+				$column_width: 100%/($i+2);
+				
+				.eltdf-bl-item,
+				.eltdf-bl-grid-sizer {
+					width: $column_width;
+				}
+			}
+		}
+		
+		.eltdf-post-image {
+			margin: 0 0 25px;
+		}
+		
+		.eltdf-post-excerpt {
+			margin: 14px 0 0;
+		}
+	}
+}
+/* ==========================================================================
+   Blog List shortcode - Masonry type style - end
+   ========================================================================== */

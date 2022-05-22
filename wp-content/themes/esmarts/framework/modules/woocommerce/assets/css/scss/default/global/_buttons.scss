@@ -1,0 +1,77 @@
+/* ==========================================================================
+   WooCommerce Buttons styles - begin
+   ========================================================================== */
+
+.woocommerce-page .eltdf-content,
+div.woocommerce {
+    
+    a.button,
+    a.added_to_cart,
+    input[type="submit"],
+    button[type="submit"]:not(.eltdf-woo-search-widget-button),
+    .wc-forward:not(.added_to_cart):not(.checkout-button) {
+        @include eltdfButtonDefaultStyle();
+        @include eltdfButtonSolidColor();
+        cursor: pointer;
+        z-index: 3;
+        padding: 14px 40px;
+        border: none;
+        overflow: hidden;
+
+        &:after {
+            position: absolute;
+            display: block;
+            bottom: 0;
+            left: 0;
+            content: " ";
+            width: 100%;
+            height: 0;
+            background-color: $adittional-green-color;
+            border-radius: inherit;
+            @include eltdfTransformOrigin(0 100%);
+            @include eltdfTransition(height .3s ease);
+            z-index: -1;
+        }
+
+        &:hover {
+            &:after {
+                height: 100%;
+            }
+        }
+    }
+    
+    a.button.added {
+        display: none;
+    }
+
+    .product-type-external {
+        a.button {
+            margin: 23px 0 0;
+        }
+    }
+
+     input[type="submit"],
+    .woocommerce-checkout-payment input[type=submit] {
+        &:hover {
+            background-color: $adittional-green-color;
+        }
+    }
+}
+
+.eltdf-woocommerce-columns-4 {
+
+	&.woocommerce-page .eltdf-content,
+	div.woocommerce {
+
+		a.button,
+		a.added_to_cart,
+		input[type="submit"],
+		button[type="submit"]:not(.eltdf-woo-search-widget-button),
+		.wc-forward:not(.added_to_cart):not(.checkout-button) {
+			padding: 14px 35px;
+		}
+	}
+}
+/* ==========================================================================
+   WooCommerce Buttons styles - end
+   ========================================================================== */

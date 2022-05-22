@@ -1,0 +1,168 @@
+.eltdf-events-list {
+	text-align: left;
+}
+
+.eltdf-events-list-item {
+	margin-bottom: 50px;
+}
+
+.eltdf-events-list-item-image-holder {
+	position: relative;
+	margin-bottom: 26px;
+	
+	img {
+		display: block;
+		border-radius: 6px;
+	}
+
+	a {
+		display: block;
+		&:hover {
+			.eltdf-events-list-item-date-holder {
+				@include eltdfTransform(translate3d(0, -31px, 0));
+			}
+
+			&:after {
+				opacity: 1;
+			}
+		}
+
+		&:after {
+			position: absolute;
+			content: "";
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0,.1);
+			opacity: 0;
+			@include eltdfTransition(opacity .3s ease);
+			z-index: 2;
+		}
+	}
+}
+
+
+.eltdf-events-list-item-date-holder {
+	position: absolute;
+	bottom: -13px;
+	left: 21px;
+	width: 75px;
+	height: 88px;
+	text-align: center;
+	color: $default-heading-color;
+	background-color: #fff;
+	border-radius: 6px;
+	box-shadow: $box-shadow-variable;
+	box-sizing: border-box;
+	z-index: 5;
+	@include eltdfTransform(translate3d(0, 0, 0));
+	@include eltdfTransition(transform .3s cubic-bezier(0.27, -0.22, 0.26, 1.37) );
+	
+	.eltdf-events-list-item-date-inner {
+		position: relative;
+		top: 50%;
+		@include eltdfTransform(translateY(-50%));
+	}
+	
+	.eltdf-events-list-item-date-day {
+		display: block;
+		font-family: $default-heading-font-m;
+		font-size: 32px;
+		line-height: 1;
+		font-weight: 700;
+	}
+	
+	.eltdf-events-list-item-date-month {
+		display: block;
+		margin-top: 7px;
+		font-size: 18px;
+		line-height: 1;
+	}
+}
+
+.eltdf-events-list-item-title-holder {
+	position: relative;
+	padding-right: 70px;
+	
+	.eltdf-events-list-item-title {
+		margin: 0;
+	}
+	
+	.eltdf-events-list-item-price {
+		position: absolute;
+		top: calc(50% - 9px);
+		right: 0;
+		padding: 1px 12px;
+		font-family: $default-heading-font-m;
+		font-size: 12px;
+		line-height: 17px;
+		color: #fff;
+		background-color: $aditional-text-color;
+		border-radius: 4px;
+		box-sizing: border-box;
+		
+		&.eltdf-free {
+			background-color: $first-main-color;
+		}
+	}
+	
+	@include phone-landscape {
+		padding-right: 0;
+		
+		.eltdf-events-list-item-price {
+			position: relative;
+			top: auto;
+			margin-top: 14px;
+		}
+	}
+}
+
+.eltdf-events-list-item-info {
+	margin-top: 16px;
+	padding-top: 17px;
+	border-top: 1px solid $default-border-color;
+	
+	span {
+		display: inline-block;
+		vertical-align: top;
+	}
+	
+	.eltdf-events-item-info-icon {
+		position: relative;
+		top: 1px;
+		width: 22px;
+		font-size: 15px;
+		
+		* {
+			display: block;
+			line-height: inherit;
+		}
+	}
+	
+	.eltdf-events-list-item-location-holdere {
+		margin-top: 1px;
+	}
+}
+
+.eltdf-events-list {
+	
+	&.eltdf-el-simple {
+		
+		.eltdf-events-list-item-holder {
+			@include eltdfRelativeHolderLayout();
+		}
+		
+		.eltdf-events-list-item-content {
+			@include eltdfRelativeHolderLayout();
+			padding: 0 0 0 110px;
+			box-sizing: border-box;
+		}
+		
+		.eltdf-events-list-item-date-holder {
+			top: 0;
+			left: 0;
+			bottom: auto;
+		}
+	}
+}

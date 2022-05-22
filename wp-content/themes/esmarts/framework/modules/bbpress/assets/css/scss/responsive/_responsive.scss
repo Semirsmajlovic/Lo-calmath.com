@@ -1,0 +1,186 @@
+@include laptop-landscape-large {
+    #bbpress-forums {
+        div.bbp-topic-tags {
+            display: inline-block;
+            float: none;
+        }
+    }
+}
+
+@include laptop-landscape {
+    #bbpress-forums {
+        #bbp-your-profile fieldset {
+
+            > div {
+                label[for] {
+                    width: 30%;
+                    padding: 5px 11px 5px 0px;
+                }
+
+                label[for="display_name"] {
+
+                }
+
+                input {
+                    width: 70%;
+                }
+            }
+        }
+    }
+}
+
+@include ipad-landscape{
+    #bbpress-forums fieldset.bbp-form>div:not(.bbp-template-notice)>p {
+        width: 100%;
+    }
+    #bbpress-forums div.bbp-template-notice {
+        margin-bottom: 0;
+    }
+}
+
+@include phone-landscape {
+    #bbpress-forums {
+        .bbp-forums {
+            .forum-titles {
+                .bbp-forum-topic-count,
+                .bbp-forum-reply-count,
+                .bbp-forum-freshness {
+                    display: none;
+                }
+            }
+            .bbp-body {
+                .bbp-forum-topic-count,
+                .bbp-forum-reply-count,
+                .bbp-forum-freshness {
+                    display: none;
+                }
+                .bbp-forum-info {
+                    width: 100%;
+                    padding-right: 0;
+                }
+            }
+        }
+        .bbp-topics {
+            .forum-titles {
+                .bbp-topic-voice-count,
+                .bbp-topic-reply-count,
+                .bbp-topic-freshness {
+                    display: none;
+                }
+            }
+            .bbp-body {
+                .bbp-topic-voice-count,
+                .bbp-topic-reply-count,
+                .bbp-topic-freshness {
+                    display: none;
+                }
+                .bbp-forum-info {
+                    width: 100%;
+                    padding-right: 0;
+                }
+            }
+        }
+        div.bbp-search-form,
+        .bbp-breadcrumb,
+        > #subscription-toggle {
+            float: none;
+        }
+        #bbp-search-form {
+            #bbp_search {
+                width: 100%;
+            }
+        }
+        div.bbp-template-notice,
+        div.indicator-hint,
+        .bbp-admin-links {
+            display: none;
+        }
+        fieldset.bbp-form {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        #bbp-your-profile fieldset {
+
+            > div {
+                label[for] {
+                    width: 100%;
+                    text-align: left;
+                    padding: 5px 11px 5px 0px;
+                }
+
+                label[for="display_name"] {
+
+                }
+
+                input {
+                    width: 100%;
+                }
+            }
+            textarea,
+            fieldset.password {
+                width: 100%;
+            }
+        }
+    }
+}
+
+@include phone-portrait {
+    #bbpress-forums {
+        .bbp-body {
+            div.bbp-reply-author {
+                margin: 0;
+                min-height: 70px;
+            }
+            div.bbp-reply-content {
+                margin-left: 0;
+                margin-right: 0;
+            }
+        }
+        div.bbp-reply-author {
+            img.avatar {
+                top: 0;
+                margin-top: 0;
+            }
+        }
+        li.bbp-body {
+            div.hentry {
+                padding-top: 16px;
+            }
+        }
+        li.bbp-header {
+            .bbp-reply-content {
+                display: none;
+            }
+            .bbp-reply-author {
+                float: none;
+            }
+        }
+
+        #bbp-single-user-details {
+            margin-bottom: 20px;
+        }
+    }
+
+    body.topic {
+        #bbpress-forums {
+            .bbp-replies li.bbp-body {
+                .bbp-reply-content {
+                    margin-left: 0;
+                    padding-top: 20px;
+                }
+            }
+            fieldset.bbp-form>div:not(.bbp-template-notice) {
+                .bbp-the-content-wrapper {
+                    padding: 0;
+                }
+
+            >p {
+                width: 100%;
+            }
+
+            }
+        }
+    }
+}
+

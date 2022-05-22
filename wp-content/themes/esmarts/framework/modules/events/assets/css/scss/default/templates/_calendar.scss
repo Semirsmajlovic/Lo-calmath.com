@@ -1,0 +1,677 @@
+#tribe-events-content-wrapper {
+	@include eltdfRelativeHolderLayout();
+	margin: 0 0 70px;
+	
+	#tribe-bar-form {
+		background: none;
+		
+		#tribe-bar-views-toggle {
+			display: none;
+		}
+		
+		/* #Events filter styles - start
+	   ========================================================================== */
+		.tribe-bar-filters {
+			@include eltdfRelativeHolderLayout();
+			float: none;
+			margin: 10px 0 30px;
+			
+			.tribe-bar-filters-inner {
+				@include eltdfRelativeHolderLayout();
+				
+				> div {
+					position: relative;
+					display: inline-block;
+					vertical-align: top;
+					float: left;
+					padding: 0;
+					box-sizing: border-box;
+				}
+				
+				.tribe-bar-date-filter {
+					width: calc((100% - 200px) / 2);
+					padding-right: 30px;
+				}
+				
+				.tribe-bar-search-filter {
+					width: calc((100% - 200px) / 2);
+					padding-right: 30px;
+				}
+				
+				.tribe-bar-submit {
+					position: relative;
+					overflow: hidden;
+					width: 100%;
+					max-width: 200px;
+					margin: 0;
+					z-index: 2;
+				}
+			}
+			
+			label {
+				display: block;
+				margin: 0 0 21px;
+				font-family: $default-heading-font-m;
+				font-size: 18px;
+				line-height: 26px;
+				font-weight: 700;
+				text-transform: none;
+				color: $default-heading-color;
+			}
+			
+			input[type=text] {
+				@include eltdfRelativeHolderLayout();
+				height: 46px;
+				margin-bottom: 20px;
+				padding: 12px 25px;
+				font-family: $default-heading-font-m;
+				font-size: 14px;
+				line-height: 20px;
+				font-style: normal;
+				color: #969696;
+				background-color: #ffffff;
+				border: 1px solid $default-border-color;
+				border-radius: 30px;
+				outline: none;
+				resize: none;
+				box-sizing: border-box;
+				@include eltdfTransition(border-color .2s ease-out);
+				
+				@include eltdfPlaceholder {
+					color: inherit;
+					font-style: normal;
+				}
+				
+				&:focus {
+					border-color: $first-main-color;
+				}
+			}
+			
+			.tribe-bar-submit {
+				
+				.tribe-events-button {
+					@include eltdfRelativeHolderLayout();
+					margin-top: 47px;
+					padding: 13px 25px;
+					font-family: $default-heading-font-m;
+					font-size: 12px;
+					line-height: 20px;
+					font-weight: 700;
+					text-transform: uppercase;
+					letter-spacing: 0.05em;
+					color: #fff;
+					background-color: $first-main-color;
+					border: 0;
+					border-radius: 30px;
+					outline: none;
+					resize: none;
+					cursor: pointer;
+					@include eltdfTransition(color .2s ease-out, background-color .2s ease-out);
+					
+					&:hover {
+						color: #fff;
+						background-color: $adittional-green-color;
+					}
+				}
+			}
+		}
+		
+		/* #Filter styles - end
+		   ========================================================================== */
+		
+		/* #View as styles - start
+	   ========================================================================== */
+		
+		#tribe-bar-views {
+			position: relative;
+			display: inline-block;
+			width: 100% !important;
+			vertical-align: middle;
+			float: none;
+			left: 0;
+			padding: 0 0 16px;
+			margin: 0 0 37px;
+			border-bottom: 1px dashed $default-border-color;
+			
+			.tribe-bar-views-inner {
+				padding: 0;
+				background: none;
+				
+				> label {
+					position: relative;
+					display: inline-block;
+					vertical-align: top;
+					padding: 0;
+					margin: 0 16px 0 0;
+					font-family: $default-heading-font-m;
+					font-size: 18px;
+					line-height: 26px;
+					font-weight: 700;
+					text-transform: none;
+					color: $default-heading-color;
+					
+					&:after {
+						content: ':';
+					}
+				}
+			}
+			
+			.tribe-bar-views-select {
+				display: none;
+			}
+			
+			.tribe-bar-views-list {
+				position: relative;
+				display: inline-block;
+				vertical-align: top;
+				width: auto;
+				float: none;
+				margin: 0;
+				padding: 0;
+				border-radius: 0;
+				background-color: transparent;
+				
+				.tribe-bar-views-option {
+					position: relative;
+					display: inline-block;
+					vertical-align: top;
+					width: auto;
+					float: none;
+					margin: 0 20px 0 0;
+					padding: 0;
+					white-space: nowrap;
+					font-family: $default-heading-font-m;
+					font-size: 14px;
+					line-height: 26px;
+					font-weight: 400;
+					color: $default-text-color;
+					background: none;
+					
+					&:hover {
+						color: $aditional-blue-color;
+					}
+					
+					&.tribe-bar-active {
+						color: $aditional-blue-color;
+					}
+					
+					&:last-child {
+						margin: 0;
+					}
+						
+					span {
+						display: none;
+					}
+					
+				}
+			}
+		}
+		
+		/* #View as styles - end
+	   ========================================================================== */
+	}
+	
+	/* #Content styles - start
+	   ========================================================================== */
+	#tribe-events-content {
+		position: relative;
+		padding: 0;
+		margin: 0;
+		
+		.tribe-events-page-title {
+			margin: 0 0 44px;
+			padding: 0 150px;
+			font-family: $default-heading-font-m;
+			font-size: 22px;
+			line-height: 30px;
+			font-weight: 700;
+			text-transform: capitalize;
+			color: $default-heading-color;
+		}
+		
+		.tribe-events-sub-nav {
+			
+			.tribe-events-nav-previous,
+			.tribe-events-nav-next {
+				
+				a {
+					position: relative;
+					font-family: $default-heading-font-m;
+					font-size: 14px;
+					line-height: 22px;
+					font-weight: 400;
+					color: $default-text-color;
+					
+					&:hover {
+						color: $aditional-blue-color;
+					}
+				}
+				
+				span {
+					display: none;
+				}
+			}
+		}
+		
+		&.tribe-events-list,
+		&.tribe-events-month,
+		&.tribe-events-day {
+			
+			.tribe-events-nav-previous a:before,
+			.tribe-events-nav-next a:after {
+				position: relative;
+				top: 4px;
+				font-family: 'ElegantIcons';
+				font-size: 22px;
+			}
+			
+			.tribe-events-nav-next a:after {
+				content: '\35';
+			}
+			
+			.tribe-events-nav-previous a:before {
+				content: '\34';
+			}
+		}
+		
+		&.tribe-events-month {
+			
+			.tribe-events-sub-nav {
+				
+				.tribe-events-nav-previous,
+				.tribe-events-nav-next {
+					position: absolute;
+					top: 4px;
+				}
+				
+				.tribe-events-nav-previous {
+					left: 0;
+				}
+				
+				.tribe-events-nav-next {
+					right: 0;
+				}
+			}
+		}
+		
+		table.tribe-events-calendar {
+			margin: 20px 0 10px;
+			border: 0;
+			border-radius: 6px;
+			box-shadow: $box-shadow-variable;
+			
+			thead {
+				
+				tr {
+					border: 0;
+				}
+				
+				th {
+					padding: 25px 10px;
+					font-family: inherit;
+					font-size: 18px;
+					line-height: 30px;
+					font-weight: 400;
+					text-transform: none;
+					color: $default-text-color;
+					background: #fff;
+					border: 0;
+					border-right: 1px solid $default-border-color;
+					
+					&:last-child {
+						border-right: 0;
+					}
+				}
+			}
+			
+			tbody {
+				
+				tr {
+					border: 0;
+				}
+				
+				td {
+					height: 166px;
+					text-align: initial;
+					background: #fff;
+					border: 0;
+					border-right: 1px solid $default-border-color;
+					box-shadow: none;
+					
+					&:last-child {
+						border-right: 0;
+					}
+					
+					&.tribe-events-has-events {
+						
+						div[id*=tribe-events-daynum-] {
+							color: #fff;
+							background-color: $first-main-color;
+						}
+					}
+					
+					&.tribe-events-present {
+						
+						div[id*=tribe-events-daynum-] {
+							color: #fff;
+							background-color: $aditional-blue-color;
+						}
+					}
+					
+					div[id*=tribe-events-daynum-] {
+						padding: 5px 14px;
+						font-family: $default-heading-font-m;
+						font-size: 18px;
+						line-height: 30px;
+						font-weight: 700;
+						text-align: left;
+						color: $default-heading-color;
+						background-color: #f8f8f8;
+						
+						a {
+							font-size: inherit;
+							line-height: inherit;
+							font-weight: inherit;
+							color: inherit;
+							background-color: inherit;
+							
+							&:hover {
+								color: $first-main-color;
+							}
+						}
+					}
+					
+					.tribe-events-month-event-title {
+						font-family: inherit;
+						font-size: 18px;
+						line-height: 26px;
+						font-weight: inherit;
+						
+						a {
+							font-size: inherit;
+						}
+					}
+				}
+
+				.tribe_events {
+					&:hover {
+						.tribe-events-tooltip {
+							opacity: 1 !important;
+							visibility: visible;
+							@include eltdfTransform(translate3d(0,0,0));
+						}
+					}
+				}
+				
+				.tribe-events-tooltip {
+					display: block !important;
+					bottom: 100% !important;
+					width: 290px;
+					padding: 20px 20px 30px;
+					text-align: left;
+					background-color: #fff;
+					box-shadow: $box-shadow-variable;
+					box-sizing: border-box;
+					opacity: 0 !important;
+					visibility: hidden;
+					@include eltdfTransform(translate3d(0,10px,0));
+					@include eltdfTransition(transform .3s cubic-bezier(.27,-.22,.26,1.37), opacity .3s ease, visibility .3s);
+
+					.tribe-events-arrow {
+						width: 0;
+						height: 0;
+						bottom: -15px;
+						background: none;
+						border-left: 15px solid transparent;
+						border-right: 15px solid transparent;
+						border-top: 15px solid #fff;
+
+						&:after {
+							content: '';
+							position: absolute;
+							left: -10px;
+							bottom: 5px;
+							width: 20px;
+							height: 20px;
+							border: 1px solid rgba(0,0,0,.03);
+							box-shadow: 0 0 0 2px rgba(0,0,0,.3);
+							-webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%);
+							clip-path: polygon(100% 0, 100% 100%, 0 100%);
+							@include eltdfTransform(rotate(45deg));
+						}
+					}
+
+					.entry-title {
+						margin: 0 0 5px;
+						color: $default-heading-color;
+						font-size: 18px;
+						line-height: 30px;
+						font-weight: 700;
+						text-transform: none;
+					}
+
+					.tribe-event-duration {
+						font-family: $default-heading-font-m;
+						font-size: 14px;
+						color: #ababab;
+						margin: 0 0 25px;
+					}
+
+					.tribe-events-event-thumb {
+						float: none;
+						padding: 0;
+
+						img {
+							display: block;
+							width: 100%;
+							max-width: 100%;
+							max-height: inherit;
+						}
+					}
+
+					.tribe-event-description p {
+						margin: 13px 0 0;
+						max-height: 66px;
+						font-family: $default-heading-font-m;
+						font-size: 14px;
+						line-height: 24px;
+						color: $default-text-color;
+						overflow: hidden;
+					}
+				}
+				
+				.tribe-events-viewmore {
+					font-family: $default-heading-font-m;
+					font-size: 12px;
+					line-height: 21px;
+					font-weight: 700;
+					text-transform: uppercase;
+				}
+			}
+		}
+		
+		&.tribe-events-list {
+			
+			.tribe-events-list-separator-month {
+				font-family: $default-heading-font-m;
+				font-size: 18px;
+				
+				span {
+					color: $default-heading-color;
+					background-color: #fafafa;
+				}
+				
+				&:after {
+					border-bottom: 1px dashed #ebebeb;
+				}
+			}
+			
+			.tribe-events-loop {
+				max-width: inherit;
+			}
+			
+			.type-tribe_events {
+				padding: 80px 0 0;
+				margin: 54px 0 0;
+				border-top: 1px solid $default-border-color;
+				
+				&.tribe-events-first {
+					padding: 12px 0 0;
+					border: 0;
+				}
+			}
+			
+			.eltdf-events-list-item-image-holder {
+				
+				img {
+					width: 100%;
+				}
+			}
+			
+			.eltdf-events-list-item-title {
+				font-size: 32px;
+				margin-bottom: 30px;
+			}
+			
+			.eltdf-events-single-meta-item {
+				font-family: $default-heading-font-m;
+				font-size: 14px;
+				line-height: 22px;
+				margin-bottom: 19px;
+				
+				> * {
+					display: inline-block;
+					vertical-align: top;
+					line-height: inherit;
+				}
+				
+				a {
+					color: $aditional-blue-color;
+					
+					&:hover {
+						color: $default-heading-color;
+					}
+				}
+			}
+			
+			.eltdf-events-single-meta-icon {
+				margin-right: 5px;
+				font-size: 15px;
+				
+				* {
+					display: block;
+					line-height: inherit;
+				}
+			}
+			
+			.eltdf-events-list-item-excerpt {
+				margin: 29px 0 0;
+				
+				p {
+					margin: 0;
+				}
+			}
+		}
+		
+		&.tribe-events-mounth {
+			
+			.tribe-events-calendar {
+				
+				td {
+					
+					.type-tribe_events {
+						display: block;
+						
+						&:after {
+							display: none;
+						}
+					}
+				}
+			}
+		}
+		
+		.tribe-events-button {
+			position: relative;
+			display: inline-block;
+			vertical-align: middle;
+			float: left;
+			width: auto;
+			outline: 0;
+			font-family: $default-heading-font-m;
+			font-size: 14px;
+			line-height: 22px;
+			font-weight: 400;
+			text-transform: none;
+			letter-spacing: 0;
+			color: $aditional-blue-color;
+			background-color: transparent;
+			border: 0;
+			border-radius: 0;
+			
+			&:hover {
+				color: $default-heading-color;
+				background-color: transparent;
+			}
+		}
+		
+		.tribe-events-sub-nav li a {
+			background: none;
+			padding: 0;
+		}
+	}
+	
+	/* #Content styles - end
+	   ========================================================================== */
+	
+	#tribe-events-header {
+		margin-bottom: 0;
+	}
+	
+	#tribe-events-footer {
+		margin: 53px 0 18px;
+		padding-top: 40px;
+	}
+	
+	#tribe-events-footer,
+	#tribe-events-header {
+		
+		&:before,
+		&:after {
+			background-color: transparent;
+		}
+	}
+	
+	#tribe-bar-collapse-toggle {
+		padding: 12px 25px;
+		margin-bottom: 13px;
+		font-family: $default-heading-font-m;
+		font-size: 14px;
+		line-height: 20px;
+		font-style: normal;
+		font-weight: 400;
+		text-transform: inherit;
+		color: $default-text-color;
+		background-color: #fff;
+		border: 1px solid $default-border-color;
+		border-radius: 30px;
+		
+		span.tribe-bar-toggle-arrow {
+			right: 15px;
+			top: 10px;
+		}
+	}
+	
+	.tribe-events-notices {
+		font-family: $default-heading-font-m;
+		font-size: 14px;
+	}
+	
+	.tribe-events-day {
+		
+		.tribe-events-day-time-slot h5 {
+			padding: 0;
+			color: $default-heading-color;
+			background: none;
+		}
+	}
+}
